@@ -3,7 +3,7 @@ module github.com/plexusone/api-style-spec
 go 1.26.3
 
 require (
-	github.com/daveshanley/vacuum v0.30.1
+	github.com/daveshanley/vacuum v0.30.3
 	github.com/fsnotify/fsnotify v1.10.1
 	github.com/grokify/mogo v0.74.8
 	github.com/invopop/jsonschema v0.14.0
