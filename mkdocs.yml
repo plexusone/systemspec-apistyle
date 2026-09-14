@@ -1,4 +1,4 @@
-site_name: systemspec-apistyle
+site_name: "SystemSpec: API Style"
 site_description: Machine-readable API style specification format
 site_url: https://plexusone.dev/systemspec-apistyle
 repo_url: https://github.com/plexusone/systemspec-apistyle

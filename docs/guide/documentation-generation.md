@@ -1,6 +1,6 @@
 # Documentation Generation
 
-systemspec-apistyle can generate human-readable documentation from your style profiles. This allows you to maintain a single source of truth (the JSON profile) while producing documentation in multiple formats.
+SystemSpec API Style can generate human-readable documentation from your style profiles. This allows you to maintain a single source of truth (the JSON profile) while producing documentation in multiple formats.
 
 ## Output Formats
 

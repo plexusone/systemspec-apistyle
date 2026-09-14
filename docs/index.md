@@ -1,10 +1,10 @@
-# systemspec-apistyle
+# SystemSpec: API Style
 
 Machine-readable API style specification format that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.
 
 ## Overview
 
-API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **systemspec-apistyle** creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
+API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **SystemSpec API Style** (`systemspec-apistyle`) creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
 
 ```
 systemspec-apistyle (source of truth)

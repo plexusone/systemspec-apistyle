@@ -109,7 +109,7 @@ No violations found.
 
 ## Using Different Profiles
 
-systemspec-apistyle includes profiles based on industry guidelines:
+SystemSpec API Style includes profiles based on industry guidelines:
 
 ```bash
 # Use Azure/Microsoft guidelines

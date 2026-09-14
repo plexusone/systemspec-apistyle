@@ -1,6 +1,6 @@
 # CI/CD Integration
 
-systemspec-apistyle is designed for CI/CD pipelines with machine-readable output formats and exit codes that signal pass/fail status.
+SystemSpec API Style is designed for CI/CD pipelines with machine-readable output formats and exit codes that signal pass/fail status.
 
 ## Exit Codes
 

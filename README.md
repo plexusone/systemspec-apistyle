@@ -1,4 +1,4 @@
-# SystemSpec-APIStyle
+# SystemSpec: API Style
 
 [![Go CI][go-ci-svg]][go-ci-url]
 [![Go Lint][go-lint-svg]][go-lint-url]
@@ -31,7 +31,7 @@ Machine-readable API style specification format that generates human documentati
 
 ## Overview
 
-API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **systemspec-apistyle** creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
+API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **SystemSpec API Style** (`systemspec-apistyle`) creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
 
 ```
 systemspec-apistyle (source of truth)
@@ -254,7 +254,7 @@ The MCP server exposes API style resources for AI agents:
 
 ## AI Agent Integration
 
-systemspec-apistyle integrates with AI assistants for automated API design:
+SystemSpec API Style integrates with AI assistants for automated API design:
 
 ```bash
 # Generate Claude Code hooks

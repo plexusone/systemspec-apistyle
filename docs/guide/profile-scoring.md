@@ -1,6 +1,6 @@
 # Profile Scoring & Coverage
 
-systemspec-apistyle includes tools to evaluate the quality and coverage of API style guides using LLM-as-a-Judge.
+SystemSpec API Style includes tools to evaluate the quality and coverage of API style guides using LLM-as-a-Judge.
 
 ## Overview
 

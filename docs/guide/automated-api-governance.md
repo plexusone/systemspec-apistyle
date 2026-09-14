@@ -1,6 +1,6 @@
 # Automated API Governance
 
-This guide covers setting up a fully automated API design workflow where AI generates OpenAPI specifications, systemspec-apistyle enforces standards, and humans only review—never manually create specs.
+This guide covers setting up a fully automated API design workflow where AI generates OpenAPI specifications, SystemSpec API Style enforces standards, and humans only review—never manually create specs.
 
 ## Overview
 
@@ -198,7 +198,7 @@ paths:
 
 ### Step 3: Automatic Validation
 
-When the AI writes the file, systemspec-apistyle validates it immediately:
+When the AI writes the file, SystemSpec API Style validates it immediately:
 
 ```
 [15:32:01] File changed: openapi.yaml

@@ -13,7 +13,7 @@ The configuration file lets you:
 
 ## File Locations
 
-systemspec-apistyle searches for config files in this order:
+SystemSpec API Style searches for config files in this order:
 
 1. Path specified via `--config` flag
 2. `.api-style.yaml` in current directory
