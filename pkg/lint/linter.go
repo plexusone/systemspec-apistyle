@@ -4,7 +4,7 @@ package lint
 import (
 	"context"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Linter defines the interface for OpenAPI specification linting.

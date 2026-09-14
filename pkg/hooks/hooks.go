@@ -1,6 +1,6 @@
 // Package hooks provides integration with AI coding assistants via assistantkit.
 //
-// This package defines api-style-spec hooks that can be exported to multiple
+// This package defines systemspec-apistyle hooks that can be exported to multiple
 // AI assistant formats (Claude Code, Kiro, Cursor, Windsurf, etc.).
 //
 // Example hooks:
@@ -16,7 +16,7 @@ import (
 	"github.com/plexusone/assistantkit/hooks/core"
 )
 
-// Config represents the api-style-spec hooks configuration.
+// Config represents the systemspec-apistyle hooks configuration.
 type Config struct {
 	// Profile is the style profile to use for linting.
 	Profile string
@@ -54,7 +54,7 @@ func DefaultConfig() *Config {
 	}
 }
 
-// Generate creates an assistantkit hooks.Config from the api-style-spec configuration.
+// Generate creates an assistantkit hooks.Config from the systemspec-apistyle configuration.
 func (c *Config) Generate() *hooks.Config {
 	cfg := hooks.NewConfig()
 

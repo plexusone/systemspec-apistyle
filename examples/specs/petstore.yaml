@@ -3,7 +3,7 @@ info:
   title: Swagger Petstore
   description: |
     This is a sample Pet Store Server based on the OpenAPI 3.1 specification.
-    This example demonstrates common API patterns and is used to test api-style-spec linting.
+    This example demonstrates common API patterns and is used to test systemspec-apistyle linting.
   version: "1.0.0"
   contact:
     email: apiteam@swagger.io

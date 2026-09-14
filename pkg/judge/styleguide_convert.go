@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // ToEvaluationReport converts a StyleGuideReport (score-profile output) into

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 func TestMarkdown_Basic(t *testing.T) {
@@ -580,7 +580,7 @@ func TestMkDocs_SplitPatterns(t *testing.T) {
 
 // TestSpectral_RegexEscaping verifies that regex patterns with backslashes
 // are correctly escaped in YAML output (not double-escaped).
-// Bug: https://github.com/plexusone/api-style-spec/issues/BUG-spectral-regex-escaping
+// Bug: https://github.com/plexusone/systemspec-apistyle/issues/BUG-spectral-regex-escaping
 func TestSpectral_RegexEscaping(t *testing.T) {
 	// JSON profile contains: "match": "^(\\/[a-z][a-z0-9\\-]*(\\/\\{[^}]+})?)*$"
 	// After JSON unmarshaling:

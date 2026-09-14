@@ -20,7 +20,7 @@ var ConfigFileNames = []string{
 	"api-style.json",
 }
 
-// Loader loads api-style-spec configuration files.
+// Loader loads systemspec-apistyle configuration files.
 type Loader struct {
 	// SearchPaths are directories to search for config files.
 	SearchPaths []string

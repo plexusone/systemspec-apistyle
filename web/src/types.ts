@@ -1,4 +1,4 @@
-// Type definitions for API Style Spec Web UI
+// Type definitions for systemspec-apistyle Web UI
 
 export type Severity = 'error' | 'warn' | 'info' | 'hint';
 export type Status = 'pass' | 'fail';

@@ -8,7 +8,7 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 var titleCaser = cases.Title(language.English)

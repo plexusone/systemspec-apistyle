@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // maxSpecChars caps the spec content sent to the LLM.

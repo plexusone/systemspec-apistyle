@@ -149,10 +149,10 @@ export class ApiStyleApp extends LitElement {
               <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
-              API Style Spec
+              systemspec-apistyle
             </a>
             <nav>
-              <a href="https://github.com/plexusone/api-style-spec" target="_blank">GitHub</a>
+              <a href="https://github.com/plexusone/systemspec-apistyle" target="_blank">GitHub</a>
               <a href="/docs">Docs</a>
             </nav>
           </div>
@@ -187,7 +187,7 @@ export class ApiStyleApp extends LitElement {
 
         <footer>
           Built with <a href="https://lit.dev" target="_blank">Lit</a> |
-          <a href="https://github.com/plexusone/api-style-spec" target="_blank">View on GitHub</a>
+          <a href="https://github.com/plexusone/systemspec-apistyle" target="_blank">View on GitHub</a>
         </footer>
       </div>
     `;

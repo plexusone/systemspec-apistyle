@@ -3,7 +3,7 @@ package profile
 import (
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 func TestValidateJSONPath_Valid(t *testing.T) {

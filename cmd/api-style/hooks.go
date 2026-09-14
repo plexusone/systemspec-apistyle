@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/hooks"
 	hookscore "github.com/plexusone/assistantkit/hooks/core"
+	"github.com/plexusone/systemspec-apistyle/pkg/hooks"
 	"github.com/spf13/cobra"
 )
 

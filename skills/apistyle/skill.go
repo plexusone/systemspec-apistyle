@@ -1,6 +1,6 @@
 // Package apistyle provides an omniskill Skill for API style specification linting and evaluation.
 //
-// This package exposes the core api-style-spec functionality as MCP tools:
+// This package exposes the core systemspec-apistyle functionality as MCP tools:
 //   - lint: Lint an OpenAPI spec against style rules
 //   - evaluate: LLM-based semantic evaluation
 //   - analyze: Combined lint + evaluate with GO/NO-GO decision
@@ -21,14 +21,14 @@ import (
 	"fmt"
 	"strings"
 
-	apistylespec "github.com/plexusone/api-style-spec"
-	"github.com/plexusone/api-style-spec/pkg/analyze"
-	"github.com/plexusone/api-style-spec/pkg/fix"
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/lint"
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/pkg/types"
 	"github.com/plexusone/omniskill/skill"
+	apistylespec "github.com/plexusone/systemspec-apistyle"
+	"github.com/plexusone/systemspec-apistyle/pkg/analyze"
+	"github.com/plexusone/systemspec-apistyle/pkg/fix"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/lint"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Skill provides API style specification tools.

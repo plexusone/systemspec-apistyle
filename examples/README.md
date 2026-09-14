@@ -1,6 +1,6 @@
 # Examples
 
-This directory contains example OpenAPI specifications and custom profiles for testing and learning api-style-spec.
+This directory contains example OpenAPI specifications and custom profiles for testing and learning systemspec-apistyle.
 
 ## Directory Structure
 

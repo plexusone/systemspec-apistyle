@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	apistylespec "github.com/plexusone/api-style-spec"
+	apistylespec "github.com/plexusone/systemspec-apistyle"
 )
 
 var rootCmd = &cobra.Command{

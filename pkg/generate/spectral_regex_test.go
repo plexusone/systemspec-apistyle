@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // TestSpectral_RegexEscaping_FromJSON tests the full pipeline from JSON profile

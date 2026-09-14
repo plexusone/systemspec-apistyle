@@ -1,4 +1,4 @@
-// Package config provides configuration file support for api-style-spec.
+// Package config provides configuration file support for systemspec-apistyle.
 //
 // Configuration files are loaded from multiple locations in priority order:
 //  1. Explicit path via --config flag
@@ -7,9 +7,9 @@
 //  4. api-style.yaml in current directory
 package config
 
-import "github.com/plexusone/api-style-spec/pkg/types"
+import "github.com/plexusone/systemspec-apistyle/pkg/types"
 
-// Config represents the api-style-spec configuration file.
+// Config represents the systemspec-apistyle configuration file.
 type Config struct {
 	// Profile is the style profile to use for linting.
 	Profile string `yaml:"profile" json:"profile"`

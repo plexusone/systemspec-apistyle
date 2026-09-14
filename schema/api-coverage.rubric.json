@@ -4,7 +4,7 @@
   "description": "Evaluates the topic coverage of an API style guide. Checks whether all essential REST API design topics are addressed with sufficient depth.",
   "version": "1.0.0",
   "metadata": {
-    "author": "api-style-spec",
+    "author": "systemspec-apistyle",
     "purpose": "Assess completeness of API style guides across 26 REST API design categories"
   },
   "categories": [

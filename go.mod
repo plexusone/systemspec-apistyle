@@ -1,4 +1,4 @@
-module github.com/plexusone/api-style-spec
+module github.com/plexusone/systemspec-apistyle
 
 go 1.26.3
 

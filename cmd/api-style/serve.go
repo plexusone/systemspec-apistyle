@@ -17,9 +17,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/plexusone/api-style-spec/pkg/lint"
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/lint"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 var (
@@ -31,8 +31,8 @@ var (
 
 var serveCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "Start the API Style Spec web server",
-	Long: `Start a web server that serves the API Style Spec UI and provides
+	Short: "Start the systemspec-apistyle web server",
+	Long: `Start a web server that serves the systemspec-apistyle UI and provides
 REST API endpoints for linting OpenAPI specifications.
 
 The server provides:
@@ -55,7 +55,7 @@ func init() {
 	serveCmd.Flags().StringVar(&serveWebDir, "web-dir", "", "Directory containing web UI files (default: embedded)")
 }
 
-// APIServer handles HTTP requests for the API Style Spec service.
+// APIServer handles HTTP requests for the systemspec-apistyle service.
 type APIServer struct {
 	mux *http.ServeMux
 }
@@ -365,7 +365,7 @@ func runServe(_ *cobra.Command, _ []string) error {
 		close(done)
 	}()
 
-	fmt.Printf("\nAPI Style Spec Server\n")
+	fmt.Printf("\nsystemspec-apistyle Server\n")
 	fmt.Printf("=====================\n")
 	fmt.Printf("Listening on: http://%s\n", addr)
 	fmt.Printf("\nAPI Endpoints:\n")

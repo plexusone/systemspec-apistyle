@@ -9,7 +9,7 @@ import (
 
 	"github.com/invopop/jsonschema"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 func main() {
@@ -40,12 +40,12 @@ func run() error {
 		{
 			name:     "api-style-spec.schema.json",
 			typ:      &types.APIStyleSpec{},
-			schemaID: "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+			schemaID: "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
 		},
 		{
 			name:     "lint-report.schema.json",
 			typ:      &types.LintReport{},
-			schemaID: "https://api-style-spec.dev/schema/v1/lint-report.schema.json",
+			schemaID: "https://plexusone.dev/systemspec-apistyle/schema/v1/lint-report.schema.json",
 		},
 	}
 

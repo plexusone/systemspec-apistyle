@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$id": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "$defs": {
     "CasingRules": {
       "properties": {

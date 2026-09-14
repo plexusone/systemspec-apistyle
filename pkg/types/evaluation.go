@@ -56,7 +56,7 @@ type EvaluationMetadata struct {
 	// GeneratedBy identifies who/what performed the evaluation.
 	GeneratedBy string `json:"generatedBy,omitempty"`
 
-	// ToolVersion is the api-style-spec version.
+	// ToolVersion is the systemspec-apistyle version.
 	ToolVersion string `json:"toolVersion,omitempty"`
 }
 

@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/path/filepathutil"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Version is the SARIF schema version.
@@ -312,7 +312,7 @@ func DefaultOptions() *Options {
 	return &Options{
 		ToolName:     "api-style",
 		ToolVersion:  "0.1.0",
-		ToolURI:      "https://github.com/plexusone/api-style-spec",
+		ToolURI:      "https://github.com/plexusone/systemspec-apistyle",
 		IncludeRules: true,
 		PrettyPrint:  true,
 	}

@@ -1,4 +1,4 @@
-# Example api-style-spec configuration file
+# Example systemspec-apistyle configuration file
 # Copy to .api-style.yaml in your project root
 
 # Style profile to use for linting

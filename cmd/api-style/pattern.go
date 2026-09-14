@@ -6,8 +6,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 var (

@@ -2,7 +2,7 @@
 # Generated from: PayPal REST API Guidelines
 # Version: 1.0.0
 #
-# This file was auto-generated from an api-style-spec profile.
+# This file was auto-generated from an systemspec-apistyle profile.
 # Do not edit manually - modify the source profile instead.
 
 extends:

@@ -10,10 +10,10 @@ import (
 	"strings"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	apistylespec "github.com/plexusone/api-style-spec"
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/skills/apistyle"
 	runtime "github.com/plexusone/omniskill/mcp/server"
+	apistylespec "github.com/plexusone/systemspec-apistyle"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/skills/apistyle"
 	"github.com/spf13/cobra"
 )
 

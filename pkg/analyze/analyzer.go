@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/lint"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/lint"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Decision represents the GO/NO-GO recommendation.
@@ -125,7 +125,7 @@ type AnalysisMetadata struct {
 	// EvaluateEnabled indicates if LLM evaluation was performed.
 	EvaluateEnabled bool `json:"evaluateEnabled"`
 
-	// ToolVersion is the api-style-spec version.
+	// ToolVersion is the systemspec-apistyle version.
 	ToolVersion string `json:"toolVersion,omitempty"`
 }
 

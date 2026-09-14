@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/plexusone/api-style-spec/main/schema/api-style-spec.schema.json",
+  "$schema": "https://raw.githubusercontent.com/plexusone/systemspec-apistyle/main/schema/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "Zalando REST API Guidelines",
   "description": "Comprehensive style rules based on Zalando RESTful API Guidelines. These guidelines define standards for designing APIs at Zalando and are used by the Zally API linter. Key differentiators include snake_case property naming, cursor-based pagination, and Problem+JSON error handling.",

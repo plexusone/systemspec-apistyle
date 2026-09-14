@@ -1,12 +1,12 @@
 {
-  "$schema": "https://raw.githubusercontent.com/plexusone/api-style-spec/main/schema/api-style-spec.schema.json",
+  "$schema": "https://raw.githubusercontent.com/plexusone/systemspec-apistyle/main/schema/api-style-spec.schema.json",
   "name": "comprehensive",
   "version": "1.0.0",
   "description": "Comprehensive API style guide with 100% category coverage. Synthesized from Microsoft REST, Microsoft Graph, Zalando, Google Cloud, Azure, and PayPal guidelines. Covers all 38 API design categories with 150+ machine-enforceable rules.",
   "metadata": {
     "author": "PlexusOne",
     "license": "Apache-2.0",
-    "repository": "https://github.com/plexusone/api-style-spec",
+    "repository": "https://github.com/plexusone/systemspec-apistyle",
     "lastUpdated": "2025-06-30",
     "sources": [
       "Microsoft REST API Guidelines",

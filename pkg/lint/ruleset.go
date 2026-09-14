@@ -3,7 +3,7 @@ package lint
 import (
 	"github.com/daveshanley/vacuum/model"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // buildVacuumRuleSet converts an APIStyleSpec to a vacuum RuleSet.
@@ -27,7 +27,7 @@ func buildVacuumRuleSet(spec *types.APIStyleSpec) map[string]*model.Rule {
 	return rules
 }
 
-// convertRule converts a single api-style-spec Rule to a vacuum Rule.
+// convertRule converts a single systemspec-apistyle Rule to a vacuum Rule.
 func convertRule(rule *types.Rule) *model.Rule {
 	if rule.Enforcement == nil {
 		return nil

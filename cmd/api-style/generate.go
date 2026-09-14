@@ -8,13 +8,13 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/plexusone/api-style-spec/pkg/generate"
-	"github.com/plexusone/api-style-spec/pkg/generate/gap"
-	"github.com/plexusone/api-style-spec/pkg/generate/guide"
-	"github.com/plexusone/api-style-spec/pkg/generate/report"
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/generate"
+	"github.com/plexusone/systemspec-apistyle/pkg/generate/gap"
+	"github.com/plexusone/systemspec-apistyle/pkg/generate/guide"
+	"github.com/plexusone/systemspec-apistyle/pkg/generate/report"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 var (

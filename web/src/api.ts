@@ -1,4 +1,4 @@
-// API client for the API Style Spec backend
+// API client for the systemspec-apistyle backend
 
 import type { LintResult, Profile } from './types';
 
@@ -6,7 +6,7 @@ import type { LintResult, Profile } from './types';
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 /**
- * API client for API Style Spec backend.
+ * API client for systemspec-apistyle backend.
  */
 export class ApiClient {
   private baseUrl: string;

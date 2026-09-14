@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // ValidationError represents a validation error for a profile.

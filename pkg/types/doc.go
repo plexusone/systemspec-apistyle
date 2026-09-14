@@ -1,6 +1,6 @@
-// Package types defines the core data types for api-style-spec.
+// Package types defines the core data types for systemspec-apistyle.
 //
-// These Go types are the source of truth for the api-style-spec format.
+// These Go types are the source of truth for the systemspec-apistyle format.
 // JSON Schema is generated from these types using invopop/jsonschema.
 //
 // Main types:

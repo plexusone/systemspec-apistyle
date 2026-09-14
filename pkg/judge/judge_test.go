@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 func TestBuildRubricSet(t *testing.T) {

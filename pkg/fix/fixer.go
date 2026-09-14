@@ -4,7 +4,7 @@ package fix
 import (
 	"context"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Fixer generates fix suggestions for violations.

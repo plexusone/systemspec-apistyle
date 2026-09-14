@@ -3,7 +3,7 @@ package judge
 import (
 	"context"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Evaluator runs LLM-based evaluation of API specifications.

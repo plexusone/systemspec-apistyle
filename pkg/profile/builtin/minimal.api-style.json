@@ -1,5 +1,5 @@
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "minimal",
   "description": "Minimal API style rules based on common REST best practices. A lightweight profile for basic API hygiene.",
@@ -548,8 +548,8 @@
   },
 
   "metadata": {
-    "author": "api-style-spec",
+    "author": "systemspec-apistyle",
     "license": "MIT",
-    "repository": "https://github.com/plexusone/api-style-spec"
+    "repository": "https://github.com/plexusone/systemspec-apistyle"
   }
 }

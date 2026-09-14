@@ -13,14 +13,14 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/plexusone/api-style-spec/pkg/config"
-	"github.com/plexusone/api-style-spec/pkg/files"
-	"github.com/plexusone/api-style-spec/pkg/fix"
-	"github.com/plexusone/api-style-spec/pkg/lint"
-	"github.com/plexusone/api-style-spec/pkg/profile"
-	"github.com/plexusone/api-style-spec/pkg/sarif"
-	"github.com/plexusone/api-style-spec/pkg/types"
-	"github.com/plexusone/api-style-spec/pkg/watch"
+	"github.com/plexusone/systemspec-apistyle/pkg/config"
+	"github.com/plexusone/systemspec-apistyle/pkg/files"
+	"github.com/plexusone/systemspec-apistyle/pkg/fix"
+	"github.com/plexusone/systemspec-apistyle/pkg/lint"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/sarif"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/watch"
 )
 
 var (

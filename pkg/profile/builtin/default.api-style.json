@@ -1,12 +1,12 @@
 {
-  "$schema": "https://raw.githubusercontent.com/plexusone/api-style-spec/main/schema/api-style-spec.schema.json",
+  "$schema": "https://raw.githubusercontent.com/plexusone/systemspec-apistyle/main/schema/api-style-spec.schema.json",
   "name": "default",
   "version": "2.3.0",
   "description": "Industry-leading API style guide optimized for SDK generation (ogen, openapi-generator). Synthesized from Stripe, GitHub, Microsoft, and Zalando patterns. Enforces discriminated unions, named schemas, explicit nullability, and consistent operationIds for clean generated code.",
   "metadata": {
     "author": "PlexusOne",
     "license": "Apache-2.0",
-    "repository": "https://github.com/plexusone/api-style-spec",
+    "repository": "https://github.com/plexusone/systemspec-apistyle",
     "lastUpdated": "2025-07-01",
     "sources": [
       "Microsoft REST API Guidelines",

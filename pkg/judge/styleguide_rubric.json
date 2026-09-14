@@ -4,7 +4,7 @@
   "description": "LLM-as-a-Judge rubric for evaluating the quality, completeness, and usability of API style guides. Based on industry best practices from Stoplight, Zalando, Microsoft, Google, and PayPal.",
   "version": "1.0.0",
   "metadata": {
-    "author": "api-style-spec",
+    "author": "systemspec-apistyle",
     "source": "https://blog.stoplight.io/api-style-guides-we-love-and-why-you-will-too"
   },
   "categories": [

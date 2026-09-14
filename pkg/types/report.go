@@ -134,7 +134,7 @@ type ReportMetadata struct {
 	// Timestamp is when linting was performed.
 	Timestamp time.Time `json:"timestamp"`
 
-	// ToolVersion is the api-style-spec version.
+	// ToolVersion is the systemspec-apistyle version.
 	ToolVersion string `json:"toolVersion,omitempty"`
 
 	// RulesEvaluated is the count of rules that were checked.

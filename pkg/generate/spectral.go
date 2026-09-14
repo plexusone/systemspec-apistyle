@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // SpectralOptions configures Spectral ruleset generation.
@@ -43,7 +43,7 @@ func Spectral(spec *types.APIStyleSpec, opts *SpectralOptions) (string, error) {
 		fmt.Fprintf(&sb, "# Version: %s\n", spec.Version)
 	}
 	sb.WriteString("#\n")
-	sb.WriteString("# This file was auto-generated from an api-style-spec profile.\n")
+	sb.WriteString("# This file was auto-generated from an systemspec-apistyle profile.\n")
 	sb.WriteString("# Do not edit manually - modify the source profile instead.\n\n")
 
 	// Extends section (if applicable)

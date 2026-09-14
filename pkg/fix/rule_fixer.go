@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // RuleFixer generates fixes using rule metadata.

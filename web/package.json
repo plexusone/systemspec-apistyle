@@ -1,8 +1,8 @@
 {
-  "name": "@api-style-spec/web",
+  "name": "@systemspec-apistyle/web",
   "version": "0.1.0",
   "type": "module",
-  "description": "Web UI for API Style Spec linting and evaluation",
+  "description": "Web UI for systemspec-apistyle linting and evaluation",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

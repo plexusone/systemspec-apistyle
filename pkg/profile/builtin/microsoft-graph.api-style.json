@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/plexusone/api-style-spec/main/schema/api-style-spec.schema.json",
+  "$schema": "https://raw.githubusercontent.com/plexusone/systemspec-apistyle/main/schema/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "Microsoft Graph API Guidelines",
   "description": "Comprehensive style rules based on Microsoft Graph API Guidelines. Microsoft Graph provides a unified API endpoint for accessing Microsoft 365 services including users, groups, mail, calendar, files, and more. This profile includes Graph-specific patterns like OData conventions, navigation properties, actions, functions, and delta queries.",

@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // These tests guard against externally reported pattern-rule false positives:

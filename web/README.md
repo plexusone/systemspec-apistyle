@@ -1,6 +1,6 @@
-# API Style Spec Web UI
+# systemspec-apistyle Web UI
 
-Web-based interface for API Style Spec linting and evaluation.
+Web-based interface for systemspec-apistyle linting and evaluation.
 
 ## Tech Stack
 

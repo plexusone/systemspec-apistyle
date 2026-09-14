@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // MockProvider for testing without real API calls.

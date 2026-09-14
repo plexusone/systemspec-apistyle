@@ -3,7 +3,7 @@ package judge
 import (
 	"fmt"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // RubricSet is a collection of evaluation criteria built from an APIStyleSpec.

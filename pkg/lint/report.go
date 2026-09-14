@@ -7,7 +7,7 @@ import (
 
 	vacuumModel "github.com/daveshanley/vacuum/model"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // convertVacuumResults converts vacuum results to our LintReport format.
@@ -83,7 +83,7 @@ func enrichViolation(v *types.Violation, rule *types.Rule) {
 	v.Category = rule.Category
 
 	// Generate rule documentation URL
-	v.RuleURL = fmt.Sprintf("https://api-style-spec.dev/rules/%s",
+	v.RuleURL = fmt.Sprintf("https://plexusone.dev/systemspec-apistyle/rules/%s",
 		strings.ToLower(rule.ID))
 
 	// Add suggestion from migration guidance or examples

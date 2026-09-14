@@ -1,8 +1,8 @@
 package judge
 
 import (
-	"github.com/plexusone/api-style-spec/pkg/types"
 	"github.com/plexusone/structured-evaluation/rubric"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // GenerateRubricSet converts an APIStyleSpec to a structured-evaluation RubricSet.

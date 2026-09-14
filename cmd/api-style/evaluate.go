@@ -9,9 +9,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/plexusone/api-style-spec/pkg/analyze"
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/analyze"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
 )
 
 var (

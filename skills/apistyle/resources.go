@@ -8,9 +8,9 @@ import (
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/plexusone/api-style-spec/pkg/generate"
-	"github.com/plexusone/api-style-spec/pkg/judge"
-	"github.com/plexusone/api-style-spec/pkg/profile"
+	"github.com/plexusone/systemspec-apistyle/pkg/generate"
+	"github.com/plexusone/systemspec-apistyle/pkg/judge"
+	"github.com/plexusone/systemspec-apistyle/pkg/profile"
 )
 
 // ResourceRegistrar can register MCP resources.

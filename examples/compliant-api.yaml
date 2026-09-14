@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Compliant API Example
   description: |
-    Example API that follows all api-style-spec default profile rules.
+    Example API that follows all systemspec-apistyle default profile rules.
     This demonstrates best practices for SDK generation with ogen.
   version: 1.0.0
   contact:

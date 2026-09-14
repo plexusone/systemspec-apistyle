@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/plexusone/api-style-spec/main/schema/api-style-spec.schema.json",
+  "$schema": "https://raw.githubusercontent.com/plexusone/systemspec-apistyle/main/schema/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "Microsoft REST API Guidelines",
   "description": "Comprehensive style rules based on Microsoft Azure REST API Guidelines and Microsoft REST API Guidelines. This profile includes ~120 rules covering versioning, URI design, HTTP semantics, error handling, pagination, long-running operations, naming conventions, security, and more.",

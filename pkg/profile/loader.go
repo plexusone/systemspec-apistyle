@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 	"gopkg.in/yaml.v3"
 )
 
@@ -46,7 +46,7 @@ func NewLoader() *Loader {
 		SearchPaths: []string{
 			".",
 			"profiles",
-			"~/.config/api-style-spec/profiles",
+			"~/.config/systemspec-apistyle/profiles",
 		},
 	}
 }

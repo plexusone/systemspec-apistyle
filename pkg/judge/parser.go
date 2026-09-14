@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plexusone/api-style-spec/pkg/types"
+	"github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // ErrNoJSONFound indicates no JSON block was found in the response.
