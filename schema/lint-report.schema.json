@@ -70,6 +70,24 @@
         },
         "category": {
           "type": "string"
+        },
+        "exampleFix": {
+          "type": "string"
+        },
+        "ruleUrl": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "relatedRules": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "fixPriority": {
+          "type": "integer"
         }
       },
       "additionalProperties": false,

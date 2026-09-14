@@ -38,6 +38,30 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "CategoryGroup": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "order": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "CodeAnnotation": {
       "properties": {
         "line": {
@@ -362,6 +386,48 @@
         },
         "reason": {
           "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GenerationExample": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "openapi": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GenerationGuidance": {
+      "properties": {
+        "prompt": {
+          "type": "string"
+        },
+        "template": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "integer"
+        },
+        "examples": {
+          "items": {
+            "$ref": "#/$defs/GenerationExample"
+          },
+          "type": "array"
+        },
+        "checklist": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "additionalProperties": false,
@@ -713,6 +779,9 @@
         },
         "migration": {
           "$ref": "#/$defs/MigrationGuidance"
+        },
+        "generate": {
+          "$ref": "#/$defs/GenerationGuidance"
         }
       },
       "additionalProperties": false,
@@ -927,6 +996,12 @@
     "categories": {
       "items": {
         "$ref": "#/$defs/Category"
+      },
+      "type": "array"
+    },
+    "categoryGroups": {
+      "items": {
+        "$ref": "#/$defs/CategoryGroup"
       },
       "type": "array"
     },
