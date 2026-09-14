@@ -7,7 +7,7 @@ require (
 	github.com/fsnotify/fsnotify v1.10.1
 	github.com/grokify/mogo v0.74.8
 	github.com/invopop/jsonschema v0.14.0
-	github.com/modelcontextprotocol/go-sdk v1.7.0
+	github.com/modelcontextprotocol/go-sdk v1.8.0
 	github.com/plexusone/assistantkit v0.15.0
 	github.com/plexusone/omniskill v0.12.0
 	github.com/plexusone/structured-evaluation v0.14.0
