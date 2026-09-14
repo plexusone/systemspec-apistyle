@@ -1,6 +1,6 @@
 # Roadmap
 
-## api-style-spec
+## systemspec-apistyle
 
 **Version:** 0.1.0-draft
 **Date:** 2026-06-03
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This roadmap outlines the phased development of api-style-spec, from core types through full ecosystem integration.
+This roadmap outlines the phased development of systemspec-apistyle, from core types through full ecosystem integration.
 
 ## Phase Summary
 

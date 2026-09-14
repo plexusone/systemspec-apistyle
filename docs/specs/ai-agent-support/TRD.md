@@ -1,6 +1,6 @@
 # Technical Requirements Document (TRD)
 
-## AI Agent Support for api-style-spec
+## AI Agent Support for systemspec-apistyle
 
 **Version:** 0.5.0-draft
 **Date:** 2026-07-14
@@ -289,7 +289,7 @@ package fix
 import (
     "context"
 
-    "github.com/plexusone/api-style-spec/pkg/types"
+    "github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Fixer generates fix suggestions for violations.
@@ -342,7 +342,7 @@ import (
     "fmt"
     "strings"
 
-    "github.com/plexusone/api-style-spec/pkg/types"
+    "github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // RuleFixer generates fixes using rule metadata.
@@ -674,7 +674,7 @@ func enrichViolation(v *types.Violation, rule *types.Rule, profile *types.APISty
     v.Category = rule.Category
 
     // Generate rule URL
-    v.RuleURL = fmt.Sprintf("https://api-style-spec.dev/profiles/%s#%s",
+    v.RuleURL = fmt.Sprintf("https://plexusone.dev/systemspec-apistyle/profiles/%s#%s",
         strings.ToLower(profile.Name),
         strings.ToLower(rule.ID))
 
@@ -706,7 +706,7 @@ func enrichViolation(v *types.Violation, rule *types.Rule, profile *types.APISty
 ## File Structure
 
 ```
-api-style-spec/
+systemspec-apistyle/
 ├── pkg/
 │   ├── types/
 │   │   ├── report.go      # Enhanced Violation

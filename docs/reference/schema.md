@@ -1,6 +1,6 @@
 # Specification Format
 
-Complete reference for the api-style-spec JSON schema.
+Complete reference for the systemspec-apistyle JSON schema.
 
 ## Overview
 
@@ -8,7 +8,7 @@ Style profiles are defined in JSON format and contain rules for API design guide
 
 ```json
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "name": "my-style",
   "version": "1.0.0",
   "description": "My API Style Guidelines",
@@ -255,7 +255,7 @@ Rules tagged with a level are required at that level and above.
 
 ```json
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "name": "my-company-api-style",
   "version": "1.0.0",
   "description": "My Company API Design Guidelines",

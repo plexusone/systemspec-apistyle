@@ -1,13 +1,13 @@
 # Getting Started
 
-This guide walks you through installing api-style-spec and linting your first OpenAPI specification.
+This guide walks you through installing systemspec-apistyle and linting your first OpenAPI specification.
 
 ## Installation
 
 ### From Source (Go)
 
 ```bash
-go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 ```
 
 ### Verify Installation
@@ -109,7 +109,7 @@ No violations found.
 
 ## Using Different Profiles
 
-api-style-spec includes profiles based on industry guidelines:
+systemspec-apistyle includes profiles based on industry guidelines:
 
 ```bash
 # Use Azure/Microsoft guidelines

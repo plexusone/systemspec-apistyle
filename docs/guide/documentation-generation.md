@@ -1,6 +1,6 @@
 # Documentation Generation
 
-api-style-spec can generate human-readable documentation from your style profiles. This allows you to maintain a single source of truth (the JSON profile) while producing documentation in multiple formats.
+systemspec-apistyle can generate human-readable documentation from your style profiles. This allows you to maintain a single source of truth (the JSON profile) while producing documentation in multiple formats.
 
 ## Output Formats
 
@@ -205,8 +205,8 @@ Use the generation functions in Go code:
 
 ```go
 import (
-    "github.com/plexusone/api-style-spec/pkg/generate"
-    "github.com/plexusone/api-style-spec/pkg/profile"
+    "github.com/plexusone/systemspec-apistyle/pkg/generate"
+    "github.com/plexusone/systemspec-apistyle/pkg/profile"
 )
 
 // Load profile
@@ -249,7 +249,7 @@ md, err := generate.Markdown(spec, opts)
 ### MkDocs Site
 
 ```go
-import "github.com/plexusone/api-style-spec/pkg/generate"
+import "github.com/plexusone/systemspec-apistyle/pkg/generate"
 
 // Generate MkDocs site structure
 opts := &generate.MkDocsOptions{
@@ -400,7 +400,7 @@ jobs:
           go-version: '1.23'
 
       - name: Install api-style
-        run: go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+        run: go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
       - name: Generate MkDocs site
         run: api-style generate mkdocs --profile ./my-profile.json --output ./site

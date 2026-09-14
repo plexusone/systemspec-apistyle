@@ -101,7 +101,7 @@ For semantic analysis that can't be captured by patterns:
 
 ```json
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "name": "my-company-style",
   "version": "1.0.0",
   "description": "My Company API Style Guidelines",

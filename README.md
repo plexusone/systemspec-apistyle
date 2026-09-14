@@ -1,4 +1,4 @@
-# API Style Spec
+# systemspec-apistyle
 
 [![Go CI][go-ci-svg]][go-ci-url]
 [![Go Lint][go-lint-svg]][go-lint-url]
@@ -8,31 +8,33 @@
 [![Visualization][viz-svg]][viz-url]
 [![License][license-svg]][license-url]
 
- [go-ci-svg]: https://github.com/plexusone/api-style-spec/actions/workflows/go-ci.yaml/badge.svg?branch=main
- [go-ci-url]: https://github.com/plexusone/api-style-spec/actions/workflows/go-ci.yaml
- [go-lint-svg]: https://github.com/plexusone/api-style-spec/actions/workflows/go-lint.yaml/badge.svg?branch=main
- [go-lint-url]: https://github.com/plexusone/api-style-spec/actions/workflows/go-lint.yaml
- [go-sast-svg]: https://github.com/plexusone/api-style-spec/actions/workflows/go-sast-codeql.yaml/badge.svg?branch=main
- [go-sast-url]: https://github.com/plexusone/api-style-spec/actions/workflows/go-sast-codeql.yaml
- [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/plexusone/api-style-spec
- [docs-godoc-url]: https://pkg.go.dev/github.com/plexusone/api-style-spec
+ [go-ci-svg]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-ci.yaml/badge.svg?branch=main
+ [go-ci-url]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-ci.yaml
+ [go-lint-svg]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-lint.yaml/badge.svg?branch=main
+ [go-lint-url]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-lint.yaml
+ [go-sast-svg]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-sast-codeql.yaml/badge.svg?branch=main
+ [go-sast-url]: https://github.com/plexusone/systemspec-apistyle/actions/workflows/go-sast-codeql.yaml
+ [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/plexusone/systemspec-apistyle
+ [docs-godoc-url]: https://pkg.go.dev/github.com/plexusone/systemspec-apistyle
  [docs-mkdoc-svg]: https://img.shields.io/badge/Go-dev%20guide-blue.svg
- [docs-mkdoc-url]: https://plexusone.dev/api-style-spec
+ [docs-mkdoc-url]: https://plexusone.dev/systemspec-apistyle
  [viz-svg]: https://img.shields.io/badge/Go-visualizaton-blue.svg
- [viz-url]: https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=plexusone%2Fapi-style-spec
- [loc-svg]: https://tokei.rs/b1/github/plexusone/api-style-spec
- [repo-url]: https://github.com/plexusone/api-style-spec
+ [viz-url]: https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=plexusone%2Fsystemspec-apistyle
+ [loc-svg]: https://tokei.rs/b1/github/plexusone/systemspec-apistyle
+ [repo-url]: https://github.com/plexusone/systemspec-apistyle
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
- [license-url]: https://github.com/plexusone/api-style-spec/blob/main/LICENSE
+ [license-url]: https://github.com/plexusone/systemspec-apistyle/blob/main/LICENSE
 
 Machine-readable API style specification format that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.
 
+> **Note:** This project is part of the PlexusOne `systemspec-{domain}` family of machine-readable system definitions (alongside `systemspec-designsystem`, `systemspec-architecture`, `systemspec-crypto`, and `systemspec-deploy`). It was formerly named `api-style-spec` and was renamed in September 2026; releases up to v0.5.0 were published under the old module path `github.com/plexusone/api-style-spec`.
+
 ## Overview
 
-API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **api-style-spec** creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
+API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. **systemspec-apistyle** creates a machine-readable specification format that serves as the canonical source, generating all artifacts from one definition.
 
 ```
-api-style-spec (source of truth)
+systemspec-apistyle (source of truth)
     ├── Human Style Guide (Markdown)
     ├── Deterministic Linters (Spectral/vacuum)
     ├── LLM Review Rubrics
@@ -55,7 +57,7 @@ api-style-spec (source of truth)
 ## Installation
 
 ```bash
-go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 ```
 
 ## Quick Start
@@ -126,7 +128,7 @@ See [.api-style.yaml.example](.api-style.yaml.example) for a complete example.
 
 ```json
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "my-api-style",
   "extends": ["default"],
@@ -252,7 +254,7 @@ The MCP server exposes API style resources for AI agents:
 
 ## AI Agent Integration
 
-api-style-spec integrates with AI assistants for automated API design:
+systemspec-apistyle integrates with AI assistants for automated API design:
 
 ```bash
 # Generate Claude Code hooks

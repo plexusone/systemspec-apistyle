@@ -1,8 +1,8 @@
 # AI Agent Support Roadmap
 
-## api-style-spec v0.5.0+
+## systemspec-apistyle v0.5.0+
 
-This roadmap outlines the features planned for AI agent support in api-style-spec.
+This roadmap outlines the features planned for AI agent support in systemspec-apistyle.
 
 ---
 
@@ -199,6 +199,6 @@ Ideas for longer-term exploration:
 
 ## Contributing
 
-Feature requests and discussions welcome in [GitHub Issues](https://github.com/plexusone/api-style-spec/issues).
+Feature requests and discussions welcome in [GitHub Issues](https://github.com/plexusone/systemspec-apistyle/issues).
 
 To contribute implementations, see [CONTRIBUTING.md](../../../CONTRIBUTING.md).

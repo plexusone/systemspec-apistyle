@@ -1,6 +1,6 @@
 # Using Profiles
 
-Profiles are collections of API style rules. api-style-spec includes profiles based on industry-standard guidelines.
+Profiles are collections of API style rules. systemspec-apistyle includes profiles based on industry-standard guidelines.
 
 ## Built-in Profiles
 

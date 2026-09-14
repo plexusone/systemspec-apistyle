@@ -1,8 +1,8 @@
-site_name: api-style-spec
+site_name: systemspec-apistyle
 site_description: Machine-readable API style specification format
-site_url: https://api-style-spec.dev
-repo_url: https://github.com/plexusone/api-style-spec
-repo_name: plexusone/api-style-spec
+site_url: https://plexusone.dev/systemspec-apistyle
+repo_url: https://github.com/plexusone/systemspec-apistyle
+repo_name: plexusone/systemspec-apistyle
 
 theme:
   name: material
@@ -89,4 +89,4 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/plexusone/api-style-spec
+      link: https://github.com/plexusone/systemspec-apistyle

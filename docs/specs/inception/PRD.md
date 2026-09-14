@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-## api-style-spec
+## systemspec-apistyle
 
 **Version:** 0.1.0-draft
 **Date:** 2026-06-03
@@ -8,7 +8,7 @@
 
 ## Overview
 
-api-style-spec is a machine-readable specification format for API style guides that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.
+systemspec-apistyle is a machine-readable specification format for API style guides that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.
 
 ## Goals
 
@@ -76,11 +76,11 @@ api-style-spec is a machine-readable specification format for API style guides t
 
 **Priority:** P0 (Phase 1)
 
-The api-style-spec JSON format defines API style rules with:
+The systemspec-apistyle JSON format defines API style rules with:
 
 ```json
 {
-  "$schema": "https://api-style-spec.dev/schema/v1/api-style-spec.schema.json",
+  "$schema": "https://plexusone.dev/systemspec-apistyle/schema/v1/api-style-spec.schema.json",
   "version": "1.0.0",
   "name": "acme-api-style",
   "extends": ["azure-v1"],
@@ -330,7 +330,7 @@ You are an API style reviewer for ACME Corp.
 
 ## Style Rules
 
-{Generated from api-style-spec rules}
+{Generated from systemspec-apistyle rules}
 
 ## Evaluation Process
 

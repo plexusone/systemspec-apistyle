@@ -1,6 +1,6 @@
 # Automated API Governance
 
-This guide covers setting up a fully automated API design workflow where AI generates OpenAPI specifications, api-style-spec enforces standards, and humans only review—never manually create specs.
+This guide covers setting up a fully automated API design workflow where AI generates OpenAPI specifications, systemspec-apistyle enforces standards, and humans only review—never manually create specs.
 
 ## Overview
 
@@ -35,7 +35,7 @@ Requirements → AI Generates Spec → Automated Validation → Human Review →
 │                                                                 │
 │  1. Requirements    2. AI Generation    3. Validation          │
 │  ┌───────────┐     ┌───────────────┐   ┌─────────────────┐     │
-│  │ "Add user │────▶│ Claude Code   │──▶│ api-style-spec  │     │
+│  │ "Add user │────▶│ Claude Code   │──▶│ systemspec-apistyle  │     │
 │  │ endpoint" │     │ generates     │   │ lints spec      │     │
 │  └───────────┘     │ openapi.yaml  │   └────────┬────────┘     │
 │                    └───────────────┘            │               │
@@ -58,11 +58,11 @@ Requirements → AI Generates Spec → Automated Validation → Human Review →
 ### 1. Install Tools
 
 ```bash
-# Install api-style-spec CLI
-go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+# Install systemspec-apistyle CLI
+go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
 # Install MCP server for AI integration
-go install github.com/plexusone/api-style-spec/cmd/mcp-api-style@latest
+go install github.com/plexusone/systemspec-apistyle/cmd/mcp-api-style@latest
 
 # Verify installation
 api-style version
@@ -198,7 +198,7 @@ paths:
 
 ### Step 3: Automatic Validation
 
-When the AI writes the file, api-style-spec validates it immediately:
+When the AI writes the file, systemspec-apistyle validates it immediately:
 
 ```
 [15:32:01] File changed: openapi.yaml
@@ -312,7 +312,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install api-style
-        run: go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+        run: go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
       - name: Lint OpenAPI specs
         run: api-style lint api/ --recursive --format sarif --output results.sarif

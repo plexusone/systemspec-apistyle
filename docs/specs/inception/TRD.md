@@ -1,6 +1,6 @@
 # Technical Requirements Document (TRD)
 
-## api-style-spec
+## systemspec-apistyle
 
 **Version:** 0.1.0-draft
 **Date:** 2026-06-03
@@ -10,7 +10,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        api-style-spec                           │
+│                        systemspec-apistyle                           │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
@@ -48,7 +48,7 @@
 ## Package Structure
 
 ```
-api-style-spec/
+systemspec-apistyle/
 ├── pkg/
 │   ├── types/                 # Core types (schema source of truth)
 │   │   ├── spec.go           # APIStyleSpec root type
@@ -420,7 +420,7 @@ import (
     "github.com/daveshanley/vacuum/motor"
     "github.com/daveshanley/vacuum/rulesets"
 
-    "github.com/plexusone/api-style-spec/pkg/types"
+    "github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // VacuumLinter implements Linter using vacuum.
@@ -428,14 +428,14 @@ type VacuumLinter struct {
     spec *types.APIStyleSpec
 }
 
-// NewVacuumLinter creates a linter from an api-style-spec.
+// NewVacuumLinter creates a linter from an systemspec-apistyle.
 func NewVacuumLinter(spec *types.APIStyleSpec) *VacuumLinter {
     return &VacuumLinter{spec: spec}
 }
 
 // Lint executes linting against an OpenAPI specification.
 func (l *VacuumLinter) Lint(specBytes []byte, opts *LintOptions) (*types.LintReport, error) {
-    // Convert api-style-spec rules to vacuum ruleset
+    // Convert systemspec-apistyle rules to vacuum ruleset
     rs := l.buildRuleSet()
 
     // Execute vacuum
@@ -449,7 +449,7 @@ func (l *VacuumLinter) Lint(specBytes []byte, opts *LintOptions) (*types.LintRep
     return l.convertResult(result)
 }
 
-// buildRuleSet converts api-style-spec to vacuum RuleSet.
+// buildRuleSet converts systemspec-apistyle to vacuum RuleSet.
 func (l *VacuumLinter) buildRuleSet() *rulesets.RuleSet {
     rs := &rulesets.RuleSet{
         Rules: make(map[string]*model.Rule),
@@ -488,7 +488,7 @@ import (
 
     "github.com/plexusone/structured-evaluation/rubric"
 
-    "github.com/plexusone/api-style-spec/pkg/types"
+    "github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // Evaluator performs LLM-based evaluation.
@@ -499,7 +499,7 @@ type Evaluator struct {
 
 // Evaluate runs LLM evaluation on an OpenAPI spec.
 func (e *Evaluator) Evaluate(ctx context.Context, specContent string, opts *EvaluateOptions) (*rubric.Rubric, error) {
-    // Build rubric from api-style-spec
+    // Build rubric from systemspec-apistyle
     rubricSet := e.buildRubricSet()
 
     // Create evaluation report
@@ -520,7 +520,7 @@ func (e *Evaluator) Evaluate(ctx context.Context, specContent string, opts *Eval
     return report, nil
 }
 
-// buildRubricSet creates a RubricSet from api-style-spec rules.
+// buildRubricSet creates a RubricSet from systemspec-apistyle rules.
 func (e *Evaluator) buildRubricSet() *rubric.RubricSet {
     categories := make(map[string]*rubric.Category)
 
@@ -562,7 +562,7 @@ import (
     "github.com/plexusone/assistantkit/agents/core"
     multiagentspec "github.com/plexusone/multi-agent-spec/sdk/go"
 
-    "github.com/plexusone/api-style-spec/pkg/types"
+    "github.com/plexusone/systemspec-apistyle/pkg/types"
 )
 
 // AgentGenerator creates AI agent definitions.
@@ -640,7 +640,7 @@ import (
 
 func NewServer() *chi.Mux {
     r := chi.NewRouter()
-    api := humachi.New(r, huma.DefaultConfig("api-style-spec", "1.0.0"))
+    api := humachi.New(r, huma.DefaultConfig("systemspec-apistyle", "1.0.0"))
 
     // Register endpoints
     huma.Register(api, huma.Operation{

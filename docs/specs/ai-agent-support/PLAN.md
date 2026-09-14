@@ -1,6 +1,6 @@
 # Implementation Plan
 
-## AI Agent Support for api-style-spec
+## AI Agent Support for systemspec-apistyle
 
 **Version:** 0.5.0
 **Date:** 2026-07-14
@@ -82,7 +82,7 @@ Update text, JSON, and SARIF formatters to include new fields:
              get:
                operationId: listUsers
   Fix Priority: 1 (fix first)
-  Docs: https://api-style-spec.dev/profiles/default#uri-001
+  Docs: https://plexusone.dev/systemspec-apistyle/profiles/default#uri-001
 ```
 
 **Acceptance:**

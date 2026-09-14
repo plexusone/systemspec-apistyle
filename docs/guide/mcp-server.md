@@ -1,6 +1,6 @@
 # MCP Server
 
-api-style-spec provides an MCP (Model Context Protocol) server for integration with AI assistants like Claude.
+systemspec-apistyle provides an MCP (Model Context Protocol) server for integration with AI assistants like Claude.
 
 ## Overview
 

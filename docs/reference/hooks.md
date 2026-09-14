@@ -146,7 +146,7 @@ This adds context about the active style profile to help the AI assistant write 
 For hooks to work, the `mcp-api-style` binary must be in your PATH:
 
 ```bash
-go install github.com/plexusone/api-style-spec/cmd/mcp-api-style@latest
+go install github.com/plexusone/systemspec-apistyle/cmd/mcp-api-style@latest
 ```
 
 ## Manual Configuration

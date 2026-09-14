@@ -1,6 +1,6 @@
 # Configuration File
 
-Configure api-style-spec defaults via `.api-style.yaml` in your project root.
+Configure systemspec-apistyle defaults via `.api-style.yaml` in your project root.
 
 ## Overview
 
@@ -13,7 +13,7 @@ The configuration file lets you:
 
 ## File Locations
 
-api-style-spec searches for config files in this order:
+systemspec-apistyle searches for config files in this order:
 
 1. Path specified via `--config` flag
 2. `.api-style.yaml` in current directory

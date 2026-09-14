@@ -1,6 +1,6 @@
 # CI/CD Integration
 
-api-style-spec is designed for CI/CD pipelines with machine-readable output formats and exit codes that signal pass/fail status.
+systemspec-apistyle is designed for CI/CD pipelines with machine-readable output formats and exit codes that signal pass/fail status.
 
 ## Exit Codes
 
@@ -111,7 +111,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install api-style
-        run: go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+        run: go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
       - name: Lint OpenAPI spec
         run: |
@@ -144,7 +144,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install api-style
-        run: go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+        run: go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
       - name: Analyze API spec
         env:
@@ -185,7 +185,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install api-style
-        run: go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+        run: go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
 
       - name: Lint ${{ matrix.spec }}
         run: |
@@ -201,7 +201,7 @@ api-lint:
   image: golang:1.22
   stage: test
   script:
-    - go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+    - go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
     - api-style lint openapi.yaml --profile plexusone-rest --level standard --format json
   artifacts:
     reports:
@@ -229,7 +229,7 @@ steps:
       version: '1.22'
 
   - script: |
-      go install github.com/plexusone/api-style-spec/cmd/api-style@latest
+      go install github.com/plexusone/systemspec-apistyle/cmd/api-style@latest
       api-style lint api/openapi.yaml \
         --profile plexusone-rest \
         --level standard \

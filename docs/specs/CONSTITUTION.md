@@ -1,6 +1,6 @@
 # Project Constitution
 
-Technology standards and architectural decisions for api-style-spec.
+Technology standards and architectural decisions for systemspec-apistyle.
 
 ## Core Principles
 
@@ -92,7 +92,7 @@ If persistence is needed:
 ## Code Organization
 
 ```
-api-style-spec/
+systemspec-apistyle/
 ├── pkg/                    # Core library packages
 │   ├── types/             # Go types (schema source of truth)
 │   ├── lint/              # vacuum integration

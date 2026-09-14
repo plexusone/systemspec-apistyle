@@ -1,6 +1,6 @@
-# API Style Spec Roadmap
+# systemspec-apistyle Roadmap
 
-This document outlines planned features and enhancements for API Style Spec, organized by priority.
+This document outlines planned features and enhancements for systemspec-apistyle, organized by priority.
 
 ## Completed
 
@@ -394,4 +394,4 @@ Ideas for longer-term exploration:
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) for how to propose new features or contribute implementations.
 
-Feature requests and discussions are welcome in [GitHub Issues](https://github.com/plexusone/api-style-spec/issues).
+Feature requests and discussions are welcome in [GitHub Issues](https://github.com/plexusone/systemspec-apistyle/issues).

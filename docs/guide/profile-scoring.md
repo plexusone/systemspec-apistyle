@@ -1,6 +1,6 @@
 # Profile Scoring & Coverage
 
-api-style-spec includes tools to evaluate the quality and coverage of API style guides using LLM-as-a-Judge.
+systemspec-apistyle includes tools to evaluate the quality and coverage of API style guides using LLM-as-a-Judge.
 
 ## Overview
 
@@ -138,7 +138,7 @@ rules:
 The scoring rubrics are JSON files that can be used programmatically:
 
 ```go
-import "github.com/plexusone/api-style-spec/pkg/judge"
+import "github.com/plexusone/systemspec-apistyle/pkg/judge"
 
 // Load quality rubric
 rubric, _ := judge.LoadStyleGuideRubric()

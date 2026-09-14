@@ -1,6 +1,6 @@
 # Market Requirements Document (MRD)
 
-## api-style-spec
+## systemspec-apistyle
 
 **Version:** 0.1.0-draft
 **Date:** 2026-06-03
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. Organizations struggle to enforce these guidelines consistently across teams, tools, and AI agents. **api-style-spec** creates a machine-readable specification format that serves as the single source of truth, generating human documentation, linting rules, LLM evaluation rubrics, and agent instructions from one canonical definition.
+API style guides from Microsoft, Google, and Zalando have become industry standards, but they exist only as human-readable documents. Organizations struggle to enforce these guidelines consistently across teams, tools, and AI agents. **systemspec-apistyle** creates a machine-readable specification format that serves as the single source of truth, generating human documentation, linting rules, LLM evaluation rubrics, and agent instructions from one canonical definition.
 
 ## Market Context
 
@@ -37,7 +37,7 @@ API style guides from Microsoft, Google, and Zalando have become industry standa
 | vacuum | Fast, Go library | No style guide generation |
 | Optic | API diff/changelog | No style enforcement |
 | Redocly | Documentation focus | Limited linting |
-| **api-style-spec** | Unified spec, LLM+lint, multi-platform | New entrant |
+| **systemspec-apistyle** | Unified spec, LLM+lint, multi-platform | New entrant |
 
 ## Target Users
 

@@ -1,7 +1,7 @@
 {
   "irVersion": "1.0",
-  "project": "api-style-spec",
-  "repository": "https://github.com/plexusone/api-style-spec",
+  "project": "systemspec-apistyle",
+  "repository": "https://github.com/plexusone/systemspec-apistyle",
   "versioning": "semver",
   "commitConvention": "conventional",
   "maintainers": ["johnwang", "johncwang@gmail.com"],

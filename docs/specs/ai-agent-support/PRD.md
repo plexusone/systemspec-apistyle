@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-## AI Agent Support for api-style-spec
+## AI Agent Support for systemspec-apistyle
 
 **Version:** 0.5.0-draft
 **Date:** 2026-07-14
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document defines product requirements for enhancing api-style-spec to fully support AI agents in two key workflows:
+This document defines product requirements for enhancing systemspec-apistyle to fully support AI agents in two key workflows:
 
 1. **Design**: AI agents generating OpenAPI specs that conform to a style specification
 2. **Review**: AI agents reviewing existing OpenAPI specs for conformance
@@ -100,7 +100,7 @@ type Violation struct {
   "line": 42,
   "suggestion": "Rename path from /user to /users",
   "exampleFix": "paths:\n  /users:  # was: /user\n    get:",
-  "ruleUrl": "https://api-style-spec.dev/profiles/default#uri-001",
+  "ruleUrl": "https://plexusone.dev/systemspec-apistyle/profiles/default#uri-001",
   "confidence": 1.0,
   "relatedRules": []
 }
