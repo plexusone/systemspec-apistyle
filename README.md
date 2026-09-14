@@ -1,4 +1,4 @@
-# systemspec-apistyle
+# SystemSpec-APIStyle
 
 [![Go CI][go-ci-svg]][go-ci-url]
 [![Go Lint][go-lint-svg]][go-lint-url]
