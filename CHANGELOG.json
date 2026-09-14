@@ -7,6 +7,48 @@
   "maintainers": ["johnwang", "johncwang@gmail.com"],
   "releases": [
     {
+      "version": "v0.6.0",
+      "date": "2026-09-13",
+      "highlights": [
+        { "description": "Module renamed to github.com/plexusone/systemspec-apistyle as part of the PlexusOne systemspec-{domain} family consolidation (breaking)" },
+        { "description": "HTML style guide and gap-analysis report generators, with new `generate guide-html` and `generate gap-analysis` CLI commands" },
+        { "description": "CategoryGroup semantic rule grouping applied to the default profile" },
+        { "description": "PayPal REST API style guide added as a reference exemplar" }
+      ],
+      "added": [
+        { "description": "`generate guide-html` command producing an HTML style guide from a profile", "commit": "84ae447" },
+        { "description": "`generate gap-analysis` command producing an HTML gap-analysis report", "commit": "84ae447" },
+        { "description": "HTML gap analysis report generator", "commit": "3a0264f" },
+        { "description": "HTML style guide generator", "commit": "574a6e1" },
+        { "description": "`CategoryGroup` type for semantic rule grouping", "commit": "3196f99" },
+        { "description": "Category groups added to the default profile", "commit": "b32efc1" },
+        { "description": "`generate report` accepts score-profile JSON input", "commit": "b8657ac" },
+        { "description": "PayPal REST API style guide reference exemplar", "commit": "3dd99ec" }
+      ],
+      "changed": [
+        { "description": "Renamed Go module from github.com/plexusone/api-style-spec to github.com/plexusone/systemspec-apistyle; schema $id and rule URLs moved from api-style-spec.dev to plexusone.dev/systemspec-apistyle", "commit": "19101fe" },
+        { "description": "Updated README, MkDocs site, and guides for the systemspec-apistyle name and the \"SystemSpec: API Style\" display name", "commit": "5ddcbce" },
+        { "description": "Exported category helper functions from the generate package for reuse", "commit": "c81a445" },
+        { "description": "MCP server derives its tool list and version from single sources instead of duplicated literals", "commit": "bb08493" }
+      ],
+      "fixed": [
+        { "description": "x-extension JSONPath expressions use bracket notation to avoid analyzer crashes", "commit": "844f657" },
+        { "description": "omniagent-rest profile's dangling basedOn pointer, restoring schema validity", "commit": "4ff406e" },
+        { "description": "Implemented Version method required by omniskill v0.12", "commit": "b4e424f" },
+        { "description": "LLM judge surfaces spec truncation instead of silently discarding it", "commit": "51f07a4" },
+        { "description": "Exception scopes support glob matching and a Paths list", "commit": "59da435" },
+        { "description": "Version constant was stale at 0.3.0 while the changelog and release docs were at v0.5.0; bumped to match", "commit": "3fd396f" }
+      ],
+      "build": [
+        { "description": "Updated go.mod dependencies across several rounds, including omniskill, structured-evaluation, assistantkit, mogo, modelcontextprotocol/go-sdk, vacuum, and testify", "commit": "0b22ff7" }
+      ],
+      "tests": [
+        { "description": "Backfilled coverage for types, schema embeds, and CLI registration", "commit": "b878f18" },
+        { "description": "Pinned pattern-rule lint behavior and retired a stale bug report fixture", "commit": "fb88a9e" },
+        { "description": "Generate test fixtures use neutral EXT- rule IDs instead of vendor-specific ones", "commit": "39c4a93" }
+      ]
+    },
+    {
       "version": "v0.5.0",
       "date": "2026-07-15",
       "highlights": [

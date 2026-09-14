@@ -2,4 +2,4 @@
 package apistylespec
 
 // Version is the current version of systemspec-apistyle.
-const Version = "0.5.0"
+const Version = "0.6.0"
