@@ -1,0 +1,2450 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Machine-readable API style specification format">
+      
+      
+      
+        <link rel="canonical" href="https://plexusone.dev/systemspec-apistyle/specs/ai-agent-support/PLAN/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Implementation Plan - systemspec-apistyle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://plexusone.dev/css/plexusone-mkdocs.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementation-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- PlexusOne Unified Navigation -->
+<div id="plexus-nav-root"></div>
+<script src="https://plexusone.dev/js/plexus-nav.js"></script>
+
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="systemspec-apistyle" class="md-header__button md-logo" aria-label="systemspec-apistyle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            systemspec-apistyle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementation Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/plexusone/systemspec-apistyle" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    plexusone/systemspec-apistyle
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="systemspec-apistyle" class="md-nav__button md-logo" aria-label="systemspec-apistyle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    systemspec-apistyle
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/plexusone/systemspec-apistyle" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    plexusone/systemspec-apistyle
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/automated-api-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated API Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/profile-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/profile-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/documentation-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/custom-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/mcp-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration File
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Profiles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/default/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/comprehensive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprehensive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/minimal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/microsoft-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microsoft REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/microsoft-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microsoft Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profiles/zalando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zalando
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONSTITUTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inception/MRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inception/PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inception/TRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inception/ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/v0.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.5.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/v0.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/v0.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.3.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/v0.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/v0.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.1.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent-support-for-systemspec-apistyle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agent Support for systemspec-apistyle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-enhanced-violation-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Enhanced Violation Remediation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Enhanced Violation Remediation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-11-extend-violation-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.1: Extend Violation Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-12-enrich-violations-during-linting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.2: Enrich Violations During Linting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-13-update-cli-output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.3: Update CLI Output Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-14-add-suggest-fixes-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.4: Add --suggest-fixes Flag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-fix-suggestion-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Fix Suggestion Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Fix Suggestion Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-21-create-pkgfix-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.1: Create pkg/fix Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-22-create-pkgtypesfixgo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.2: Create pkg/types/fix.go
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-23-json-patch-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.3: JSON Patch Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-24-add-suggest-fixes-cli-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.4: Add suggest-fixes CLI Command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-mcp-tool-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: MCP Tool Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: MCP Tool Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-31-add-suggest_fixes-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.1: Add suggest_fixes Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-32-add-design_check-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.2: Add design_check Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-33-add-conformance_path-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.3: Add conformance_path Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-34-update-mcp-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.4: Update MCP Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-generation-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Generation Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Generation Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-41-add-generationguidance-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.1: Add GenerationGuidance Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-42-add-generation-metadata-to-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.2: Add Generation Metadata to Profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-43-generate-generation-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.3: Generate Generation Rubric
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-exemplar-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Exemplar Specs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 5: Exemplar Specs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-51-create-exemplar-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.1: Create Exemplar Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-52-exemplar-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.2: Exemplar Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-53-cli-list-exemplars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5.3: CLI List Exemplars
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-6-pattern-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: Pattern Library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 6: Pattern Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-61-define-pattern-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6.1: Define Pattern Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-62-add-patterns-to-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6.2: Add Patterns to Profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-63-pattern-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6.3: Pattern Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-64-mcp-get_pattern-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6.4: MCP get_pattern Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="implementation-plan">Implementation Plan<a class="headerlink" href="#implementation-plan" title="Permanent link">&para;</a></h1>
+<h2 id="ai-agent-support-for-systemspec-apistyle">AI Agent Support for systemspec-apistyle<a class="headerlink" href="#ai-agent-support-for-systemspec-apistyle" title="Permanent link">&para;</a></h2>
+<p><strong>Version:</strong> 0.5.0
+<strong>Date:</strong> 2026-07-14</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This plan organizes implementation into phases, with each phase delivering incremental value. Dependencies between tasks are noted.</p>
+<h2 id="phase-1-enhanced-violation-remediation">Phase 1: Enhanced Violation Remediation<a class="headerlink" href="#phase-1-enhanced-violation-remediation" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Violations include actionable fix guidance for AI agents.</p>
+<h3 id="task-11-extend-violation-type">Task 1.1: Extend Violation Type<a class="headerlink" href="#task-11-extend-violation-type" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/types/report.go</code></p>
+<p>Add new fields to <code>Violation</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Violation</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Existing fields...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// NEW fields</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">ExampleFix</span><span class="w">   </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;exampleFix,omitempty&quot;`</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">RuleURL</span><span class="w">      </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;ruleUrl,omitempty&quot;`</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">Confidence</span><span class="w">   </span><span class="kt">float64</span><span class="w">  </span><span class="s">`json:&quot;confidence,omitempty&quot;`</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">RelatedRules</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;relatedRules,omitempty&quot;`</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">FixPriority</span><span class="w">  </span><span class="kt">int</span><span class="w">      </span><span class="s">`json:&quot;fixPriority,omitempty&quot;`</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Fields added with JSON tags</li>
+<li>[ ] Existing tests pass</li>
+<li>[ ] JSON output includes new fields when populated</li>
+</ul>
+<h3 id="task-12-enrich-violations-during-linting">Task 1.2: Enrich Violations During Linting<a class="headerlink" href="#task-12-enrich-violations-during-linting" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/lint/results.go</code>, <code>pkg/lint/vacuum.go</code></p>
+<p><strong>Depends on:</strong> Task 1.1</p>
+<p>Populate new fields when converting vacuum results:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">enrichViolation</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">Violation</span><span class="p">,</span><span class="w"> </span><span class="nx">rule</span><span class="w"> </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">Rule</span><span class="p">,</span><span class="w"> </span><span class="nx">profile</span><span class="w"> </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">APIStyleSpec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">RuleURL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">generateRuleURL</span><span class="p">(</span><span class="nx">profile</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="nx">rule</span><span class="p">.</span><span class="nx">ID</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">Confidence</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="c1">// Deterministic</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">FixPriority</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">calculateFixPriority</span><span class="p">(</span><span class="nx">rule</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">RelatedRules</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">extractRelatedRules</span><span class="p">(</span><span class="nx">rule</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">rule</span><span class="p">.</span><span class="nx">Examples</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">rule</span><span class="p">.</span><span class="nx">Examples</span><span class="p">.</span><span class="nx">Good</span><span class="p">)</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nx">v</span><span class="p">.</span><span class="nx">ExampleFix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">generateExampleFix</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="nx">rule</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] All lint violations have RuleURL populated</li>
+<li>[ ] Violations have Confidence = 1.0</li>
+<li>[ ] Rules with examples have ExampleFix populated</li>
+<li>[ ] Rules with relations have RelatedRules populated</li>
+</ul>
+<h3 id="task-13-update-cli-output-formats">Task 1.3: Update CLI Output Formats<a class="headerlink" href="#task-13-update-cli-output-formats" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/api-style/lint.go</code></p>
+<p><strong>Depends on:</strong> Task 1.2</p>
+<p>Update text, JSON, and SARIF formatters to include new fields:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[URI-001] Resource name &#39;user&#39; should be plural
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  Path: $.paths./user (line 42)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  Suggestion: Rename path from /user to /users
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  Example: /users:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>             get:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>               operationId: listUsers
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  Fix Priority: 1 (fix first)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  Docs: https://plexusone.dev/systemspec-apistyle/profiles/default#uri-001
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Text format shows suggestion and example</li>
+<li>[ ] JSON format includes all new fields</li>
+<li>[ ] SARIF format maps fields appropriately</li>
+</ul>
+<h3 id="task-14-add-suggest-fixes-flag">Task 1.4: Add --suggest-fixes Flag<a class="headerlink" href="#task-14-add-suggest-fixes-flag" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/api-style/lint.go</code></p>
+<p><strong>Depends on:</strong> Task 1.3</p>
+<p>Add flag to include enhanced remediation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>api-style<span class="w"> </span>lint<span class="w"> </span>openapi.yaml<span class="w"> </span>--suggest-fixes
+</code></pre></div>
+<p>When enabled:</p>
+<ul>
+<li>Include ExampleFix for all violations</li>
+<li>Sort violations by FixPriority</li>
+<li>Group related violations</li>
+</ul>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Flag is documented in --help</li>
+<li>[ ] Violations sorted by priority when flag enabled</li>
+<li>[ ] Related violations grouped together</li>
+</ul>
+<hr />
+<h2 id="phase-2-fix-suggestion-engine">Phase 2: Fix Suggestion Engine<a class="headerlink" href="#phase-2-fix-suggestion-engine" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Dedicated package and CLI for generating fix suggestions.</p>
+<h3 id="task-21-create-pkgfix-package">Task 2.1: Create pkg/fix Package<a class="headerlink" href="#task-21-create-pkgfix-package" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/fix/fixer.go</code>, <code>pkg/fix/rule_fixer.go</code></p>
+<p>Create the fix suggestion interface and rule-based implementation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Fixer</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">SuggestFixes</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">spec</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="nx">violations</span><span class="w"> </span><span class="p">[]</span><span class="nx">types</span><span class="p">.</span><span class="nx">Violation</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">Options</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">FixReport</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">type</span><span class="w"> </span><span class="nx">RuleFixer</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">profile</span><span class="w"> </span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">APIStyleSpec</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Interface defined</li>
+<li>[ ] Rule-based fixer generates suggestions from rule examples</li>
+<li>[ ] Unit tests for common violation patterns</li>
+</ul>
+<h3 id="task-22-create-pkgtypesfixgo">Task 2.2: Create pkg/types/fix.go<a class="headerlink" href="#task-22-create-pkgtypesfixgo" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/types/fix.go</code></p>
+<p>Define fix-related types:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">FixSuggestion</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">RuleID</span><span class="w">         </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;ruleId&quot;`</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">Path</span><span class="w">           </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;path&quot;`</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">CurrentValue</span><span class="w">   </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;currentValue,omitempty&quot;`</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">SuggestedValue</span><span class="w"> </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;suggestedValue&quot;`</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">Diff</span><span class="w">           </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;diff,omitempty&quot;`</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nx">Confidence</span><span class="w">     </span><span class="kt">float64</span><span class="w"> </span><span class="s">`json:&quot;confidence&quot;`</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nx">Reasoning</span><span class="w">      </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;reasoning,omitempty&quot;`</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="kd">type</span><span class="w"> </span><span class="nx">FixReport</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nx">Suggestions</span><span class="w">     </span><span class="p">[]</span><span class="nx">FixSuggestion</span><span class="w">  </span><span class="s">`json:&quot;suggestions&quot;`</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nx">PatchOperations</span><span class="w"> </span><span class="p">[]</span><span class="nx">PatchOperation</span><span class="w"> </span><span class="s">`json:&quot;patchOperations,omitempty&quot;`</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nx">FixedCount</span><span class="w">      </span><span class="kt">int</span><span class="w">              </span><span class="s">`json:&quot;fixedCount&quot;`</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nx">UnfixedCount</span><span class="w">    </span><span class="kt">int</span><span class="w">              </span><span class="s">`json:&quot;unfixedCount&quot;`</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Types defined with JSON tags</li>
+<li>[ ] Types compile successfully</li>
+<li>[ ] Integration with existing types package</li>
+</ul>
+<h3 id="task-23-json-patch-generation">Task 2.3: JSON Patch Generation<a class="headerlink" href="#task-23-json-patch-generation" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/fix/patch.go</code></p>
+<p>Generate RFC 6902 JSON Patch operations:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">GeneratePatch</span><span class="p">(</span><span class="nx">suggestions</span><span class="w"> </span><span class="p">[]</span><span class="nx">types</span><span class="p">.</span><span class="nx">FixSuggestion</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="nx">types</span><span class="p">.</span><span class="nx">PatchOperation</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="c1">// Convert suggestions to JSON Patch operations</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Valid RFC 6902 operations generated</li>
+<li>[ ] Handles add, remove, replace, move</li>
+<li>[ ] Tests verify patch application</li>
+</ul>
+<h3 id="task-24-add-suggest-fixes-cli-command">Task 2.4: Add suggest-fixes CLI Command<a class="headerlink" href="#task-24-add-suggest-fixes-cli-command" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/api-style/suggest.go</code></p>
+<p><strong>Depends on:</strong> Task 2.1, 2.2</p>
+<p>New standalone command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>api-style<span class="w"> </span>suggest-fixes<span class="w"> </span>openapi.yaml<span class="w"> </span>--profile<span class="w"> </span>azure
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>api-style<span class="w"> </span>suggest-fixes<span class="w"> </span>openapi.yaml<span class="w"> </span>--output<span class="w"> </span>fixes.json
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>api-style<span class="w"> </span>suggest-fixes<span class="w"> </span>openapi.yaml<span class="w"> </span>--patch<span class="w"> </span><span class="c1"># Output JSON Patch</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Command documented in --help</li>
+<li>[ ] Outputs fix suggestions in JSON format</li>
+<li>[ ] --patch flag outputs JSON Patch operations</li>
+</ul>
+<hr />
+<h2 id="phase-3-mcp-tool-integration">Phase 3: MCP Tool Integration<a class="headerlink" href="#phase-3-mcp-tool-integration" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> AI agents can access fix suggestions via MCP.</p>
+<h3 id="task-31-add-suggest_fixes-tool">Task 3.1: Add suggest_fixes Tool<a class="headerlink" href="#task-31-add-suggest_fixes-tool" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/mcp-api-style/tools.go</code></p>
+<p><strong>Depends on:</strong> Task 2.1</p>
+<p>Register new MCP tool:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">suggestFixesTool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">mcp</span><span class="p">.</span><span class="nx">Tool</span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;suggest_fixes&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Generate fix suggestions for violations&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Tool registered in MCP server</li>
+<li>[ ] Input schema documented</li>
+<li>[ ] Returns FixReport JSON</li>
+<li>[ ] Integration test passes</li>
+</ul>
+<h3 id="task-32-add-design_check-tool">Task 3.2: Add design_check Tool<a class="headerlink" href="#task-32-add-design_check-tool" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/mcp-api-style/tools.go</code>, <code>pkg/fix/design.go</code></p>
+<p><strong>Depends on:</strong> Task 2.1</p>
+<p>Pre-generation guidance tool:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">designCheckTool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">mcp</span><span class="p">.</span><span class="nx">Tool</span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;design_check&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Get design guidance before generating OpenAPI spec&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Tool generates checklist from profile rules</li>
+<li>[ ] Returns template for common patterns</li>
+<li>[ ] Ordered by rule priority</li>
+</ul>
+<h3 id="task-33-add-conformance_path-tool">Task 3.3: Add conformance_path Tool<a class="headerlink" href="#task-33-add-conformance_path-tool" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/mcp-api-style/tools.go</code>, <code>pkg/fix/conformance.go</code></p>
+<p><strong>Depends on:</strong> Task 2.1</p>
+<p>Show path to conformance level:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">conformancePathTool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">mcp</span><span class="p">.</span><span class="nx">Tool</span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;conformance_path&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Show path to reach conformance level&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Calculates blockers and warnings</li>
+<li>[ ] Shows progress percentage</li>
+<li>[ ] Orders fixes by priority</li>
+</ul>
+<h3 id="task-34-update-mcp-resources">Task 3.4: Update MCP Resources<a class="headerlink" href="#task-34-update-mcp-resources" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/mcp-api-style/resources.go</code></p>
+<p>Add new resources:</p>
+<ul>
+<li><code>apistyle://profiles/{name}/exemplars</code></li>
+<li><code>apistyle://profiles/{name}/exemplars/{id}</code></li>
+<li><code>apistyle://profiles/{name}/patterns</code></li>
+</ul>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Resources return correct data</li>
+<li>[ ] 404 for unknown exemplars/patterns</li>
+<li>[ ] Integration tests pass</li>
+</ul>
+<hr />
+<h2 id="phase-4-generation-guidance">Phase 4: Generation Guidance<a class="headerlink" href="#phase-4-generation-guidance" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Rules include generation-focused metadata.</p>
+<h3 id="task-41-add-generationguidance-type">Task 4.1: Add GenerationGuidance Type<a class="headerlink" href="#task-41-add-generationguidance-type" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/types/rule.go</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">GenerationGuidance</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">Prompt</span><span class="w">    </span><span class="kt">string</span><span class="w">              </span><span class="s">`json:&quot;prompt&quot;`</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">Template</span><span class="w">  </span><span class="kt">string</span><span class="w">              </span><span class="s">`json:&quot;template,omitempty&quot;`</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nx">Priority</span><span class="w">  </span><span class="kt">int</span><span class="w">                 </span><span class="s">`json:&quot;priority,omitempty&quot;`</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nx">Examples</span><span class="w">  </span><span class="p">[]</span><span class="nx">GenerationExample</span><span class="w"> </span><span class="s">`json:&quot;examples,omitempty&quot;`</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nx">Checklist</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w">            </span><span class="s">`json:&quot;checklist,omitempty&quot;`</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Type defined with JSON tags</li>
+<li>[ ] Rule.Generate field added</li>
+<li>[ ] Existing tests pass</li>
+</ul>
+<h3 id="task-42-add-generation-metadata-to-profiles">Task 4.2: Add Generation Metadata to Profiles<a class="headerlink" href="#task-42-add-generation-metadata-to-profiles" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>profiles/default/profile.json</code>, <code>profiles/azure/profile.json</code>, etc.</p>
+<p><strong>Depends on:</strong> Task 4.1</p>
+<p>Add <code>generate</code> field to high-priority rules:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;URI-001&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">&quot;generate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Use plural nouns for collection endpoints&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/{resources}&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] All error-severity rules have generate.prompt</li>
+<li>[ ] Templates provided for URI rules</li>
+<li>[ ] Priority set for ordering</li>
+</ul>
+<h3 id="task-43-generate-generation-rubric">Task 4.3: Generate Generation Rubric<a class="headerlink" href="#task-43-generate-generation-rubric" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/generate/rubric.go</code></p>
+<p><strong>Depends on:</strong> Task 4.1</p>
+<p>Add <code>--mode generation</code> to rubric generation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>api-style<span class="w"> </span>generate<span class="w"> </span>rubric<span class="w"> </span>--mode<span class="w"> </span>generation<span class="w"> </span>--profile<span class="w"> </span>azure
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Outputs rules ordered by generate.priority</li>
+<li>[ ] Includes prompts as directives</li>
+<li>[ ] Groups by generation phase (info → paths → schemas)</li>
+</ul>
+<hr />
+<h2 id="phase-5-exemplar-specs">Phase 5: Exemplar Specs<a class="headerlink" href="#phase-5-exemplar-specs" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Each profile has reference OpenAPI specs.</p>
+<h3 id="task-51-create-exemplar-directory-structure">Task 5.1: Create Exemplar Directory Structure<a class="headerlink" href="#task-51-create-exemplar-directory-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>profiles/*/exemplars/*.yaml</code></p>
+<p>Create exemplar specs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>profiles/
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── default/
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>│   └── exemplars/
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│       ├── minimal.yaml     # Minimal conformant spec
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│       └── crud-api.yaml    # CRUD API example
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>├── azure/
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│   └── exemplars/
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>│       └── resource-api.yaml
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>└── zalando/
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    └── exemplars/
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        └── ecommerce-api.yaml
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Each profile has at least 1 exemplar</li>
+<li>[ ] Exemplars pass lint with their profile</li>
+<li>[ ] Exemplars are well-documented</li>
+</ul>
+<h3 id="task-52-exemplar-loading">Task 5.2: Exemplar Loading<a class="headerlink" href="#task-52-exemplar-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/profile/exemplars.go</code></p>
+<p>Load exemplars from embedded files:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">ListExemplars</span><span class="p">(</span><span class="nx">profileName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="nx">ExemplarInfo</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">func</span><span class="w"> </span><span class="nx">GetExemplar</span><span class="p">(</span><span class="nx">profileName</span><span class="p">,</span><span class="w"> </span><span class="nx">exemplarID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Exemplars embedded at compile time</li>
+<li>[ ] API returns exemplar content</li>
+<li>[ ] Error handling for missing exemplars</li>
+</ul>
+<h3 id="task-53-cli-list-exemplars">Task 5.3: CLI List Exemplars<a class="headerlink" href="#task-53-cli-list-exemplars" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/api-style/profile.go</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>api-style<span class="w"> </span>profile<span class="w"> </span>exemplars<span class="w"> </span>default
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>api-style<span class="w"> </span>profile<span class="w"> </span>exemplars<span class="w"> </span>azure<span class="w"> </span>--show<span class="w"> </span>crud-api
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Lists exemplars for a profile</li>
+<li>[ ] --show displays exemplar content</li>
+<li>[ ] Documented in --help</li>
+</ul>
+<hr />
+<h2 id="phase-6-pattern-library">Phase 6: Pattern Library<a class="headerlink" href="#phase-6-pattern-library" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Reusable patterns in profiles.</p>
+<h3 id="task-61-define-pattern-type">Task 6.1: Define Pattern Type<a class="headerlink" href="#task-61-define-pattern-type" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/types/pattern.go</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Pattern</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">ID</span><span class="w">          </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;id&quot;`</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">Name</span><span class="w">        </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;name&quot;`</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;description&quot;`</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">Template</span><span class="w">    </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="w"> </span><span class="s">`json:&quot;template&quot;`</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nx">Variables</span><span class="w">   </span><span class="p">[]</span><span class="nx">PatternVar</span><span class="w">   </span><span class="s">`json:&quot;variables,omitempty&quot;`</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Type defined</li>
+<li>[ ] Supports variable substitution</li>
+<li>[ ] JSON schema validation</li>
+</ul>
+<h3 id="task-62-add-patterns-to-profiles">Task 6.2: Add Patterns to Profiles<a class="headerlink" href="#task-62-add-patterns-to-profiles" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>profiles/*/profile.json</code></p>
+<p><strong>Depends on:</strong> Task 6.1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;crud-collection&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CRUD Collection&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">      </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Common patterns defined</li>
+<li>[ ] Patterns include CRUD, pagination, error responses</li>
+<li>[ ] Templates are valid OpenAPI fragments</li>
+</ul>
+<h3 id="task-63-pattern-expansion">Task 6.3: Pattern Expansion<a class="headerlink" href="#task-63-pattern-expansion" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>pkg/profile/patterns.go</code></p>
+<p><strong>Depends on:</strong> Task 6.2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">ExpandPattern</span><span class="p">(</span><span class="nx">pattern</span><span class="w"> </span><span class="o">*</span><span class="nx">Pattern</span><span class="p">,</span><span class="w"> </span><span class="nx">vars</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Variables substituted correctly</li>
+<li>[ ] Invalid patterns return errors</li>
+<li>[ ] Tests cover common patterns</li>
+</ul>
+<h3 id="task-64-mcp-get_pattern-tool">Task 6.4: MCP get_pattern Tool<a class="headerlink" href="#task-64-mcp-get_pattern-tool" title="Permanent link">&para;</a></h3>
+<p><strong>Files:</strong> <code>cmd/mcp-api-style/tools.go</code></p>
+<p><strong>Depends on:</strong> Task 6.3</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">getPatternTool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">mcp</span><span class="p">.</span><span class="nx">Tool</span><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;get_pattern&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Get a pattern template with variable substitution&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Acceptance:</strong></p>
+<ul>
+<li>[ ] Tool returns expanded template</li>
+<li>[ ] Variables can be provided</li>
+<li>[ ] Integration test passes</li>
+</ul>
+<hr />
+<h2 id="implementation-order">Implementation Order<a class="headerlink" href="#implementation-order" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Phase 1 (Week 1)
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>├── Task 1.1: Extend Violation Type
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>├── Task 1.2: Enrich Violations
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>├── Task 1.3: Update CLI Output
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>└── Task 1.4: Add --suggest-fixes
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Phase 2 (Week 2)
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>├── Task 2.1: Create pkg/fix
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>├── Task 2.2: Create types/fix.go
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>├── Task 2.3: JSON Patch Generation
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>└── Task 2.4: suggest-fixes CLI
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>Phase 3 (Week 3)
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>├── Task 3.1: suggest_fixes MCP Tool
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>├── Task 3.2: design_check MCP Tool
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>├── Task 3.3: conformance_path MCP Tool
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>└── Task 3.4: Update MCP Resources
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>Phase 4 (Week 4)
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>├── Task 4.1: GenerationGuidance Type
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>├── Task 4.2: Add to Profiles
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>└── Task 4.3: Generation Rubric
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>Phase 5 (Week 5)
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>├── Task 5.1: Exemplar Directory
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>├── Task 5.2: Exemplar Loading
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>└── Task 5.3: CLI List Exemplars
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>Phase 6 (Week 6)
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>├── Task 6.1: Pattern Type
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>├── Task 6.2: Add to Profiles
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>├── Task 6.3: Pattern Expansion
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>└── Task 6.4: get_pattern MCP Tool
+</code></pre></div>
+<h2 id="testing-requirements">Testing Requirements<a class="headerlink" href="#testing-requirements" title="Permanent link">&para;</a></h2>
+<p>Each phase must include:</p>
+<ol>
+<li><strong>Unit tests</strong> for new functions</li>
+<li><strong>Integration tests</strong> for CLI commands</li>
+<li><strong>MCP integration tests</strong> for new tools</li>
+<li><strong>Golden file tests</strong> for output formats</li>
+<li><strong>Profile validation</strong> ensuring exemplars pass lint</li>
+</ol>
+<h2 id="documentation-updates">Documentation Updates<a class="headerlink" href="#documentation-updates" title="Permanent link">&para;</a></h2>
+<p>For each phase, update:</p>
+<ul>
+<li><code>docs/reference/cli.md</code> - New commands and flags</li>
+<li><code>docs/guide/mcp-server.md</code> - New tools and resources</li>
+<li><code>docs/guide/profiles.md</code> - Exemplars and patterns</li>
+<li><code>CHANGELOG.json</code> - Feature entries</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/plexusone/systemspec-apistyle" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

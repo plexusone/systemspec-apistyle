@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft REST API Guidelines — Evaluation Report</title>
+    <style>
+        :root {
+            --bg-page: #f7f9fc;
+            --bg-surface: #ffffff;
+            --bg-muted: #eef1f6;
+            --text-primary: #1a2332;
+            --text-secondary: #5c6a7f;
+            --text-tertiary: #8a96a8;
+            --border: #dfe4ec;
+            --accent: #0d9488;
+            --accent-muted: rgba(13, 148, 136, 0.12);
+            --pass: #0d9488;
+            --partial: #d97706;
+            --fail: #dc2626;
+            --low: #0d9488;
+            --medium: #d97706;
+            --high: #ea580c;
+            --critical: #dc2626;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-page: #0c1220;
+                --bg-surface: #151d2e;
+                --bg-muted: #1c2638;
+                --text-primary: #e8ecf2;
+                --text-secondary: #94a3b8;
+                --text-tertiary: #64748b;
+                --border: #2d3a4f;
+                --accent: #2dd4bf;
+                --accent-muted: rgba(45, 212, 191, 0.15);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg-page: #0c1220;
+            --bg-surface: #151d2e;
+            --bg-muted: #1c2638;
+            --text-primary: #e8ecf2;
+            --text-secondary: #94a3b8;
+            --text-tertiary: #64748b;
+            --border: #2d3a4f;
+            --accent: #2dd4bf;
+            --accent-muted: rgba(45, 212, 191, 0.15);
+        }
+
+        :root[data-theme="light"] {
+            --bg-page: #f7f9fc;
+            --bg-surface: #ffffff;
+            --bg-muted: #eef1f6;
+            --text-primary: #1a2332;
+            --text-secondary: #5c6a7f;
+            --text-tertiary: #8a96a8;
+            --border: #dfe4ec;
+            --accent: #0d9488;
+            --accent-muted: rgba(13, 148, 136, 0.12);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 15px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.55;
+            padding: 2.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media print {
+            html { font-size: 11pt; }
+            body { padding: 0; background: white; max-width: none; }
+            .page-break { page-break-before: always; }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            padding-bottom: 1.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            text-wrap: balance;
+        }
+
+        .header-subtitle {
+            margin-top: 0.35rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-family: 'SF Mono', ui-monospace, monospace;
+        }
+
+        .header-right {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .decision-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--pass);
+            color: white;
+        }
+
+        .decision-badge[data-status="partial"] { background: var(--partial); }
+        .decision-badge[data-status="fail"] { background: var(--fail); }
+
+        .header-meta {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        /* Summary grid */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .summary-card {
+            background: var(--bg-surface);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            border-left: 3px solid var(--accent);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .summary-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 0.25rem;
+        }
+
+        .summary-value {
+            font-size: 1.35rem;
+            font-weight: 650;
+            font-variant-numeric: tabular-nums;
+            color: var(--text-primary);
+        }
+
+        .summary-value.accent { color: var(--accent); }
+
+        /* Sections */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+        }
+
+        /* Executive summary */
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            max-width: 72ch;
+        }
+
+        /* Table */
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .score-table th {
+            text-align: left;
+            padding: 0.6rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .score-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .score-table tbody tr:nth-child(odd) {
+            background: var(--bg-muted);
+        }
+
+        .score-table .col-category { width: 22%; }
+        .score-table .col-score { width: 10%; white-space: nowrap; }
+        .score-table .col-assessment { width: 68%; color: var(--text-secondary); }
+
+        .score-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .score-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .score-dot.s5 { background: var(--pass); }
+        .score-dot.s4 { background: var(--partial); }
+        .score-dot.s3 { background: #f59e0b; }
+        .score-dot.s2, .score-dot.s1 { background: var(--fail); }
+
+        /* Findings */
+        .findings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .finding-row {
+            display: grid;
+            grid-template-columns: 5rem 1fr auto;
+            gap: 1rem;
+            align-items: baseline;
+            padding: 0.85rem 1rem;
+            background: var(--bg-surface);
+            border-radius: 6px;
+            border-left: 3px solid var(--low);
+        }
+
+        .finding-row[data-severity="medium"] { border-left-color: var(--medium); }
+        .finding-row[data-severity="high"] { border-left-color: var(--high); }
+        .finding-row[data-severity="critical"] { border-left-color: var(--critical); }
+
+        .finding-severity {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--low);
+        }
+
+        .finding-row[data-severity="medium"] .finding-severity { color: var(--medium); }
+        .finding-row[data-severity="high"] .finding-severity { color: var(--high); }
+        .finding-row[data-severity="critical"] .finding-severity { color: var(--critical); }
+
+        .finding-text {
+            color: var(--text-primary);
+        }
+
+        .finding-category {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            text-align: right;
+        }
+
+        /* Next steps */
+        .next-steps-list {
+            list-style: none;
+        }
+
+        .next-steps-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .next-steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-action {
+            color: var(--text-primary);
+        }
+
+        .step-effort {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            background: var(--bg-muted);
+            color: var(--text-tertiary);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            text-align: center;
+        }
+
+        footer strong {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="header-title">Microsoft REST API Guidelines</h1>
+            <div class="header-subtitle">profiles/microsoft-rest/microsoft-rest.api-style.json</div>
+        </div>
+        <div class="header-right">
+            <span class="decision-badge" data-status="pass">Pass</span>
+            <div class="header-meta">
+                Evaluated June 17, 2025<br>
+                Claude Opus 4.5 (LLM-as-Judge)
+            </div>
+        </div>
+    </header>
+
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="summary-label">Categories</div>
+            <div class="summary-value accent">9/9</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">Critical / High</div>
+            <div class="summary-value">0 / 0</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">Total Findings</div>
+            <div class="summary-value">3</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">Rubric</div>
+            <div class="summary-value" style="font-size: 0.95rem;">api-style-guide-quality v1.0.0</div>
+        </div>
+    </div>
+
+    <section>
+        <h2>Executive Summary</h2>
+        <p class="summary-text">Outstanding enterprise-grade guide with 123 rules, excellent mermaid diagrams for LRO/pagination, and exceptional depth on complex topics. Improvements: publish Spectral ruleset, add rule versioning.</p>
+    </section>
+
+    <section>
+        <h2>Category Scores</h2>
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th class="col-category">Category</th>
+                    <th class="col-score">Score</th>
+                    <th class="col-assessment">Assessment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Coverage</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Covers all 6 domains plus enterprise patterns: REST/OData architecture, OpenAPI, camelCase naming (123 rules), structured error envelope, OAuth2/RBAC security, api-version query parameter.</td>
+                </tr>
+                <tr>
+                    <td>Structure & Navigation</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Excellent structure: TOC, 15 categories, MS-XXX rule IDs, conformance levels, design patterns. Clear hierarchy from principles → patterns → rules.</td>
+                </tr>
+                <tr>
+                    <td>Rule Quality & Clarity</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Exceptionally well-structured: clear titles, detailed descriptions, severity levels, comprehensive rationale. RFC 2119 keywords used appropriately.</td>
+                </tr>
+                <tr>
+                    <td>Examples & Code Samples</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Excellent examples: HTTP request/response samples, mermaid sequence diagrams for LRO and pagination flows, JSON code blocks. Good/bad contrasts provided.</td>
+                </tr>
+                <tr>
+                    <td>Enforceability & Tooling</td>
+                    <td><span class="score-cell"><span class="score-dot s4"></span>4/5</span></td>
+                    <td class="col-assessment">Distinguishes spectral-lintable vs. judge-only rules. Integrates with Azure API review processes. Not all rules have explicit Spectral configurations.</td>
+                </tr>
+                <tr>
+                    <td>Guide Versioning & Evolution</td>
+                    <td><span class="score-cell"><span class="score-dot s4"></span>4/5</span></td>
+                    <td class="col-assessment">Versioned on GitHub with compatibility section. Date-based api-version pattern is well-documented. Could improve rule-level change tracking.</td>
+                </tr>
+                <tr>
+                    <td>Completeness & Depth</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Exceptional depth: LRO state machines, conditional request semantics, ETag strategies, pagination patterns, error detail hierarchies.</td>
+                </tr>
+                <tr>
+                    <td>Internal Consistency</td>
+                    <td><span class="score-cell"><span class="score-dot s5"></span>5/5</span></td>
+                    <td class="col-assessment">Consistent terminology and patterns. value/nextLink pagination used throughout. Error format standardized. No contradictions.</td>
+                </tr>
+                <tr>
+                    <td>Accessibility & Tone</td>
+                    <td><span class="score-cell"><span class="score-dot s4"></span>4/5</span></td>
+                    <td class="col-assessment">Appropriate for enterprise API developers. Professional tone. Some Azure-specific terms could be better explained for non-Azure developers.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="page-break">
+        <h2>Findings</h2>
+        <div class="findings-list">
+            <div class="finding-row" data-severity="low">
+                <span class="finding-severity">Low</span>
+                <span class="finding-text">Some rules lack explicit Spectral rule configurations</span>
+                <span class="finding-category">Enforceability & Tooling</span>
+            </div>
+            <div class="finding-row" data-severity="low">
+                <span class="finding-severity">Low</span>
+                <span class="finding-text">No per-rule version or deprecation tracking</span>
+                <span class="finding-category">Guide Versioning & Evolution</span>
+            </div>
+            <div class="finding-row" data-severity="low">
+                <span class="finding-severity">Low</span>
+                <span class="finding-text">Azure-specific terminology may confuse non-Azure developers</span>
+                <span class="finding-category">Accessibility & Tone</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recommended Next Steps</h2>
+        <ul class="next-steps-list">
+            <li>
+                <span class="step-action">Publish @microsoft/api-guidelines Spectral ruleset</span>
+                <span class="step-effort">Medium</span>
+            </li>
+            <li>
+                <span class="step-action">Add version field and changelog for rule tracking</span>
+                <span class="step-effort">Low</span>
+            </li>
+            <li>
+                <span class="step-action">Expand glossary with Azure-specific terminology</span>
+                <span class="step-effort">Low</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        Generated by <strong>systemspec-apistyle</strong> · Rubric: api-style-guide-quality v1.0.0
+    </footer>
+</body>
+</html>

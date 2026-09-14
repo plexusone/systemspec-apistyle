@@ -1,135 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://api-style-spec.dev/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/automated-api-governance/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/automated-api-governance/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/ci-cd/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/ci-cd/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/custom-rules/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/custom-rules/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/documentation-generation/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/documentation-generation/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/getting-started/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/getting-started/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/mcp-server/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/mcp-server/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/profile-comparison/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/profile-comparison/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/profile-scoring/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/profile-scoring/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/guide/profiles/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/guide/profiles/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/azure/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/azure/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/comprehensive/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/comprehensive/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/default/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/default/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/google/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/google/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/microsoft-graph/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/microsoft-graph/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/microsoft-rest/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/microsoft-rest/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/minimal/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/minimal/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/profiles/zalando/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/profiles/zalando/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/reference/cli/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/reference/cli/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/reference/config/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/reference/config/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/reference/hooks/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/reference/hooks/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/reference/schema/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/reference/schema/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/releases/changelog/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/changelog/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/releases/v0.1.0/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/v0.1.0/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/releases/v0.2.0/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/v0.2.0/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/releases/v0.3.0/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/v0.3.0/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/releases/v0.4.0/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/v0.4.0/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/CONSTITUTION/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/releases/v0.5.0/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/ROADMAP/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/CONSTITUTION/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/inception/MRD/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/ROADMAP/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/inception/PRD/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/ai-agent-support/PLAN/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/inception/ROADMAP/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/ai-agent-support/PRD/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
     <url>
-         <loc>https://api-style-spec.dev/specs/inception/TRD/</loc>
-         <lastmod>2026-07-06</lastmod>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/ai-agent-support/ROADMAP/</loc>
+         <lastmod>2026-09-14</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/ai-agent-support/TRD/</loc>
+         <lastmod>2026-09-14</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/inception/MRD/</loc>
+         <lastmod>2026-09-14</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/inception/PRD/</loc>
+         <lastmod>2026-09-14</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/inception/ROADMAP/</loc>
+         <lastmod>2026-09-14</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.dev/systemspec-apistyle/specs/inception/TRD/</loc>
+         <lastmod>2026-09-14</lastmod>
     </url>
 </urlset>
