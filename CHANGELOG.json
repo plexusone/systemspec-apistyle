@@ -61,40 +61,40 @@
         { "description": "JSONPath validation system to prevent linting crashes from unsupported expressions" }
       ],
       "added": [
-        { "description": "`score-profile` command for LLM-based style guide quality evaluation", "commit": "5340352" },
-        { "description": "JSONPath validation functions: `ValidateProfile`, `FilterInvalidRules`, `DisableInvalidRules`", "commit": "1ba1de2" },
-        { "description": "JSONPath validation integration in `VacuumLinter` initialization", "commit": "ace919e" },
-        { "description": "New profiles: `comprehensive` (88 rules), `minimal` (29 rules), `microsoft-rest` (123 rules), `microsoft-graph` (82 rules)", "commit": "12262ab" },
-        { "description": "Expanded default profile to 106 rules across 27 categories with SDK optimization", "commit": "e5495d8" },
-        { "description": "Multi-tenancy patterns with `~` alias for current tenant context", "commit": "e5495d8" },
-        { "description": "RFC 9457 Problem Details for standardized error responses", "commit": "e5495d8" },
-        { "description": "Discriminated unions for clean polymorphism in generated SDK code", "commit": "e5495d8" },
-        { "description": "Compliant API example spec demonstrating all style patterns", "commit": "c5d4562" }
+        { "description": "`score-profile` command for LLM-based style guide quality evaluation", "commit": "d2044dd" },
+        { "description": "JSONPath validation functions: `ValidateProfile`, `FilterInvalidRules`, `DisableInvalidRules`", "commit": "349eb87" },
+        { "description": "JSONPath validation integration in `VacuumLinter` initialization", "commit": "d03be3d" },
+        { "description": "New profiles: `comprehensive` (88 rules), `minimal` (29 rules), `microsoft-rest` (123 rules), `microsoft-graph` (82 rules)", "commit": "0fc1bcd" },
+        { "description": "Expanded default profile to 106 rules across 27 categories with SDK optimization", "commit": "d114350" },
+        { "description": "Multi-tenancy patterns with `~` alias for current tenant context", "commit": "d114350" },
+        { "description": "RFC 9457 Problem Details for standardized error responses", "commit": "d114350" },
+        { "description": "Discriminated unions for clean polymorphism in generated SDK code", "commit": "d114350" },
+        { "description": "Compliant API example spec demonstrating all style patterns", "commit": "496db88" }
       ],
       "fixed": [
-        { "description": "Spectral ruleset generation for truthy/falsy functions outputs `field` instead of `functionOptions.match`", "commit": "6bbe499" },
-        { "description": "Error handling in file watcher with proper cleanup on close", "commit": "a05ff23" },
-        { "description": "Error comparison for context cancellation uses `errors.Is`", "commit": "a05ff23" },
-        { "description": "Remove custom `min` function (use Go 1.21+ builtin)", "commit": "a05ff23" }
+        { "description": "Spectral ruleset generation for truthy/falsy functions outputs `field` instead of `functionOptions.match`", "commit": "bf42a46" },
+        { "description": "Error handling in file watcher with proper cleanup on close", "commit": "27123b9" },
+        { "description": "Error comparison for context cancellation uses `errors.Is`", "commit": "27123b9" },
+        { "description": "Remove custom `min` function (use Go 1.21+ builtin)", "commit": "27123b9" }
       ],
       "changed": [
-        { "description": "Profiles now embedded in `pkg/profile/builtin/` and loaded via `profile.Load()`", "commit": "31870a2" }
+        { "description": "Profiles now embedded in `pkg/profile/builtin/` and loaded via `profile.Load()`", "commit": "48c2376" }
       ],
       "documentation": [
-        { "description": "Profile documentation for comprehensive, minimal, microsoft-rest, microsoft-graph", "commit": "af95f0e" },
-        { "description": "Updated default profile documentation with accurate 106 rules, 27 categories", "commit": "af95f0e" },
-        { "description": "Profile comparison guide", "commit": "12b51ce" },
-        { "description": "Profile scoring guide", "commit": "12b51ce" },
-        { "description": "CLI documentation for `score-profile` command", "commit": "a6c7bcd" }
+        { "description": "Profile documentation for comprehensive, minimal, microsoft-rest, microsoft-graph", "commit": "4a23af9" },
+        { "description": "Updated default profile documentation with accurate 106 rules, 27 categories", "commit": "4a23af9" },
+        { "description": "Profile comparison guide", "commit": "1c61eb8" },
+        { "description": "Profile scoring guide", "commit": "1c61eb8" },
+        { "description": "CLI documentation for `score-profile` command", "commit": "8d9aaf7" }
       ],
       "tests": [
-        { "description": "Updated tests for profile version and rule count expectations", "commit": "bb42f6d" }
+        { "description": "Updated tests for profile version and rule count expectations", "commit": "bf67471" }
       ],
       "build": [
-        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.6 to v0.29.9", "commit": "69fb6bb" },
-        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.4 to v0.29.6", "commit": "45f8aa9" },
-        { "description": "Update `github.com/plexusone/assistantkit` from v0.13.0 to v0.14.0", "commit": "9e41f9a" },
-        { "description": "Update dependencies via `go mod tidy`", "commit": "d12f407" }
+        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.6 to v0.29.9", "commit": "050b73b" },
+        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.4 to v0.29.6", "commit": "1ebcbd7" },
+        { "description": "Update `github.com/plexusone/assistantkit` from v0.13.0 to v0.14.0", "commit": "83aafea" },
+        { "description": "Update dependencies via `go mod tidy`", "commit": "9387ad6" }
       ]
     },
     {
@@ -107,38 +107,38 @@
         { "description": "Vendor API style profiles for reference implementations" }
       ],
       "added": [
-        { "description": "Extended type definitions: `Pattern`, `Principle`, `GlossaryTerm`, `Section`, `DecisionTable`, `DetailedExample`, `MigrationGuidance`, `RuleApplicability`, `Condition`, `RuleRelation`, `DeprecationInfo`", "commit": "c4b191f" },
-        { "description": "Enhanced `Rule` type with `description`, `background`, `priority`, `version`, `deprecated`, `applicability`, `conditions`, `relations`, `decisionTables`, and `migration` fields", "commit": "c4b191f" },
-        { "description": "Enhanced `JudgeCriteria` with pass/partial/fail criteria and few-shot examples", "commit": "c4b191f" },
-        { "description": "Markdown generator support for patterns, principles, glossary, decision tables, and detailed examples", "commit": "20efa34" },
-        { "description": "Mermaid diagram support in markdown output", "commit": "20efa34" },
-        { "description": "MkDocs multi-page documentation site generator with Material theme", "commit": "62b356b" },
-        { "description": "MkDocs generator options: `--split-patterns`, `--no-split-categories`, `--no-search`", "commit": "62b356b" },
-        { "description": "Rubric generation for structured-evaluation integration (`GenerateRubricSet`)", "commit": "8794add" },
-        { "description": "`generate mkdocs` CLI subcommand with site configuration flags", "commit": "231ede8" },
-        { "description": "`generate rubric` CLI subcommand for LLM evaluation rubrics", "commit": "231ede8" },
-        { "description": "`generate guide` flags: `--no-patterns`, `--no-principles`, `--no-glossary`", "commit": "231ede8" },
-        { "description": "Vendor API style profiles: Microsoft Graph, Microsoft REST, OmniAgent, PayPal, PlexusOne, Zalando", "commit": "9fb12fb" }
+        { "description": "Extended type definitions: `Pattern`, `Principle`, `GlossaryTerm`, `Section`, `DecisionTable`, `DetailedExample`, `MigrationGuidance`, `RuleApplicability`, `Condition`, `RuleRelation`, `DeprecationInfo`", "commit": "c378ada" },
+        { "description": "Enhanced `Rule` type with `description`, `background`, `priority`, `version`, `deprecated`, `applicability`, `conditions`, `relations`, `decisionTables`, and `migration` fields", "commit": "c378ada" },
+        { "description": "Enhanced `JudgeCriteria` with pass/partial/fail criteria and few-shot examples", "commit": "c378ada" },
+        { "description": "Markdown generator support for patterns, principles, glossary, decision tables, and detailed examples", "commit": "5e91d31" },
+        { "description": "Mermaid diagram support in markdown output", "commit": "5e91d31" },
+        { "description": "MkDocs multi-page documentation site generator with Material theme", "commit": "c43cd15" },
+        { "description": "MkDocs generator options: `--split-patterns`, `--no-split-categories`, `--no-search`", "commit": "c43cd15" },
+        { "description": "Rubric generation for structured-evaluation integration (`GenerateRubricSet`)", "commit": "52777df" },
+        { "description": "`generate mkdocs` CLI subcommand with site configuration flags", "commit": "10a3666" },
+        { "description": "`generate rubric` CLI subcommand for LLM evaluation rubrics", "commit": "10a3666" },
+        { "description": "`generate guide` flags: `--no-patterns`, `--no-principles`, `--no-glossary`", "commit": "10a3666" },
+        { "description": "Vendor API style profiles: Microsoft Graph, Microsoft REST, OmniAgent, PayPal, PlexusOne, Zalando", "commit": "b6d4000" }
       ],
       "changed": [
-        { "description": "JSON schema updated with extended type definitions", "commit": "9ca05cc" },
-        { "description": "Style guide quality rubric added to schema", "commit": "9ca05cc" }
+        { "description": "JSON schema updated with extended type definitions", "commit": "303dc94" },
+        { "description": "Style guide quality rubric added to schema", "commit": "303dc94" }
       ],
       "documentation": [
-        { "description": "CI/CD integration guide with exit codes, pipeline examples, pre-commit hooks", "commit": "366ff8b" },
-        { "description": "Documentation generation guide comparing Markdown and MkDocs output", "commit": "366ff8b" },
-        { "description": "CLI reference updates for `generate mkdocs` and `generate rubric`", "commit": "6cb42c6" },
-        { "description": "Getting started and profiles guides updated for new features", "commit": "6cb42c6" }
+        { "description": "CI/CD integration guide with exit codes, pipeline examples, pre-commit hooks", "commit": "3e4fc8b" },
+        { "description": "Documentation generation guide comparing Markdown and MkDocs output", "commit": "3e4fc8b" },
+        { "description": "CLI reference updates for `generate mkdocs` and `generate rubric`", "commit": "52ab216" },
+        { "description": "Getting started and profiles guides updated for new features", "commit": "52ab216" }
       ],
       "tests": [
-        { "description": "Unit tests for extended markdown generation (patterns, principles, glossary, decision tables)", "commit": "eaf71cb" }
+        { "description": "Unit tests for extended markdown generation (patterns, principles, glossary, decision tables)", "commit": "6c414aa" }
       ],
       "build": [
-        { "description": "Add `github.com/plexusone/structured-evaluation v0.8.0` dependency", "commit": "32f6204" },
-        { "description": "Update `github.com/plexusone/omniskill` from v0.8.0 to v0.9.0", "commit": "32f6204" },
-        { "description": "Update `github.com/plexusone/assistantkit` from v0.12.0 to v0.13.0", "commit": "3ef736c" },
-        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.2 to v0.29.4", "commit": "c84d697" },
-        { "description": "Update indirect dependencies via `go mod tidy`", "commit": "77e8c42" }
+        { "description": "Add `github.com/plexusone/structured-evaluation v0.8.0` dependency", "commit": "b1507dd" },
+        { "description": "Update `github.com/plexusone/omniskill` from v0.8.0 to v0.9.0", "commit": "b1507dd" },
+        { "description": "Update `github.com/plexusone/assistantkit` from v0.12.0 to v0.13.0", "commit": "1563232" },
+        { "description": "Update `github.com/daveshanley/vacuum` from v0.29.2 to v0.29.4", "commit": "6da1e2e" },
+        { "description": "Update indirect dependencies via `go mod tidy`", "commit": "e3dc8ca" }
       ]
     },
     {
@@ -151,36 +151,36 @@
         { "description": "Git pre-commit hook generator for blocking commits with violations" }
       ],
       "added": [
-        { "description": "Configuration file support with profile, level, include/exclude patterns, exceptions, and severity overrides", "commit": "b548e01" },
-        { "description": "Config file auto-discovery (`.api-style.yaml`, `.api-style.yml`, `api-style.yaml`)", "commit": "b548e01" },
-        { "description": "Multi-file resolution with glob patterns (`api/*.yaml`)", "commit": "d186981" },
-        { "description": "Recursive directory search (`--recursive` flag)", "commit": "d186981" },
-        { "description": "Include/exclude pattern filtering with `**` double-star glob support", "commit": "d186981" },
-        { "description": "`MultiLintReport` type for aggregating results from multiple files", "commit": "d186981" },
-        { "description": "Git pre-commit hook generator (`api-style hooks init`)", "commit": "b25c337" },
-        { "description": "Pre-commit hook with configurable profile and conformance level", "commit": "b25c337" },
-        { "description": "File watcher using fsnotify with debouncing", "commit": "1b58b0a" },
-        { "description": "Watch mode (`--watch` flag) for continuous re-linting", "commit": "9118701" },
-        { "description": "`--config` flag for explicit config file path", "commit": "9118701" },
-        { "description": "`--recursive` flag for directory traversal", "commit": "9118701" },
-        { "description": "`hooks init` subcommand with `--force`, `--level` flags", "commit": "254d538" }
+        { "description": "Configuration file support with profile, level, include/exclude patterns, exceptions, and severity overrides", "commit": "57e12de" },
+        { "description": "Config file auto-discovery (`.api-style.yaml`, `.api-style.yml`, `api-style.yaml`)", "commit": "57e12de" },
+        { "description": "Multi-file resolution with glob patterns (`api/*.yaml`)", "commit": "d503276" },
+        { "description": "Recursive directory search (`--recursive` flag)", "commit": "d503276" },
+        { "description": "Include/exclude pattern filtering with `**` double-star glob support", "commit": "d503276" },
+        { "description": "`MultiLintReport` type for aggregating results from multiple files", "commit": "d503276" },
+        { "description": "Git pre-commit hook generator (`api-style hooks init`)", "commit": "aea5ab6" },
+        { "description": "Pre-commit hook with configurable profile and conformance level", "commit": "aea5ab6" },
+        { "description": "File watcher using fsnotify with debouncing", "commit": "646b0e6" },
+        { "description": "Watch mode (`--watch` flag) for continuous re-linting", "commit": "e0d70e2" },
+        { "description": "`--config` flag for explicit config file path", "commit": "e0d70e2" },
+        { "description": "`--recursive` flag for directory traversal", "commit": "e0d70e2" },
+        { "description": "`hooks init` subcommand with `--force`, `--level` flags", "commit": "2196a98" }
       ],
       "changed": [
-        { "description": "`api-style lint` accepts multiple file arguments", "commit": "9118701" },
-        { "description": "CLI flags override config file settings", "commit": "9118701" }
+        { "description": "`api-style lint` accepts multiple file arguments", "commit": "e0d70e2" },
+        { "description": "CLI flags override config file settings", "commit": "e0d70e2" }
       ],
       "documentation": [
-        { "description": "Configuration file reference (`docs/reference/config.md`)", "commit": "6d5f069" },
-        { "description": "Example config file (`.api-style.yaml.example`)", "commit": "6d5f069" },
-        { "description": "CLI reference updates for new flags and commands", "commit": "d3703dc" },
-        { "description": "Getting started guide with config, multi-file, watch, pre-commit sections", "commit": "d3703dc" },
-        { "description": "Hooks reference with git pre-commit section", "commit": "d3703dc" },
-        { "description": "Automated API Governance guide for AI-first API design workflow", "commit": "e4bcaf0" },
-        { "description": "README and examples updates for v0.2.0 features", "commit": "2d3370e" }
+        { "description": "Configuration file reference (`docs/reference/config.md`)", "commit": "e8d019b" },
+        { "description": "Example config file (`.api-style.yaml.example`)", "commit": "e8d019b" },
+        { "description": "CLI reference updates for new flags and commands", "commit": "d4c6513" },
+        { "description": "Getting started guide with config, multi-file, watch, pre-commit sections", "commit": "d4c6513" },
+        { "description": "Hooks reference with git pre-commit section", "commit": "d4c6513" },
+        { "description": "Automated API Governance guide for AI-first API design workflow", "commit": "e2e58e5" },
+        { "description": "README and examples updates for v0.2.0 features", "commit": "baa143f" }
       ],
       "build": [
-        { "description": "Add `github.com/fsnotify/fsnotify v1.10.1` dependency", "commit": "2334a2e" },
-        { "description": "Update indirect dependencies (regexp2/v2 to v2.2.1)", "commit": "baf0bee" }
+        { "description": "Add `github.com/fsnotify/fsnotify v1.10.1` dependency", "commit": "d079ec2" },
+        { "description": "Update indirect dependencies (regexp2/v2 to v2.2.1)", "commit": "bcb9687" }
       ]
     },
     {
@@ -193,50 +193,50 @@
         { "description": "Web UI with Lit components and REST API backend for browser-based linting" }
       ],
       "added": [
-        { "description": "Core types package with `LintReport`, `Violation`, `StyleProfile`, and `EvaluationResult` structs", "commit": "7148015" },
-        { "description": "JSON Schema generation from Go types with embedded schemas", "commit": "7148015" },
-        { "description": "Vacuum-based linting engine with severity mapping and JSON path extraction", "commit": "4222198" },
-        { "description": "Style profile loading from YAML/JSON with built-in Azure and Google profiles", "commit": "363656a" },
-        { "description": "Profile inheritance via `extends` field for building on base profiles", "commit": "363656a" },
-        { "description": "LLM evaluation with Claude using structured prompts and JSON output", "commit": "5bdc90d" },
-        { "description": "Evaluation categories: naming, structure, documentation, security, versioning", "commit": "5bdc90d" },
-        { "description": "Analysis orchestrator combining static linting and LLM evaluation", "commit": "fb2d291" },
-        { "description": "Spectral ruleset generator from style profiles", "commit": "0d156fc" },
-        { "description": "Markdown report generator with configurable output options", "commit": "0d156fc" },
-        { "description": "CLI with `lint`, `analyze`, and `evaluate` commands", "commit": "e027306" },
-        { "description": "Multiple output formats: text, JSON, SARIF", "commit": "e027306" },
-        { "description": "Exit codes based on violation severity for CI integration", "commit": "e027306" },
-        { "description": "MCP server with `openapi://` resource URIs for spec access", "commit": "a039bd5" },
-        { "description": "MCP prompts for guided API review workflows", "commit": "a039bd5" },
-        { "description": "MCP tools for linting and evaluation from Claude Desktop", "commit": "a039bd5" },
-        { "description": "Claude Code hooks for pre-commit and post-save linting", "commit": "384d812" },
-        { "description": "Claude Code skills for `/lint` and `/evaluate` slash commands", "commit": "384d812" },
-        { "description": "SARIF 2.1.0 output format for IDE integration (VS Code, JetBrains)", "commit": "b935239" },
-        { "description": "GitHub Code Scanning compatible SARIF output", "commit": "b935239" },
-        { "description": "REST API server with `/api/lint` and `/api/profiles` endpoints", "commit": "f096739" },
-        { "description": "CORS support for development and cross-origin requests", "commit": "f096739" },
-        { "description": "Web UI with Lit components: spec editor, profile selector, results panel", "commit": "767a898" },
-        { "description": "Vite-based frontend build with hot module replacement", "commit": "767a898" },
-        { "description": "Example OpenAPI specs: PetStore and E-Commerce APIs", "commit": "3de679f" },
-        { "description": "Example custom style profiles demonstrating profile customization", "commit": "3de679f" }
+        { "description": "Core types package with `LintReport`, `Violation`, `StyleProfile`, and `EvaluationResult` structs", "commit": "ed56956" },
+        { "description": "JSON Schema generation from Go types with embedded schemas", "commit": "ed56956" },
+        { "description": "Vacuum-based linting engine with severity mapping and JSON path extraction", "commit": "731017d" },
+        { "description": "Style profile loading from YAML/JSON with built-in Azure and Google profiles", "commit": "a65f682" },
+        { "description": "Profile inheritance via `extends` field for building on base profiles", "commit": "a65f682" },
+        { "description": "LLM evaluation with Claude using structured prompts and JSON output", "commit": "5d6a8b3" },
+        { "description": "Evaluation categories: naming, structure, documentation, security, versioning", "commit": "5d6a8b3" },
+        { "description": "Analysis orchestrator combining static linting and LLM evaluation", "commit": "d7fd114" },
+        { "description": "Spectral ruleset generator from style profiles", "commit": "b4685ea" },
+        { "description": "Markdown report generator with configurable output options", "commit": "b4685ea" },
+        { "description": "CLI with `lint`, `analyze`, and `evaluate` commands", "commit": "982c201" },
+        { "description": "Multiple output formats: text, JSON, SARIF", "commit": "982c201" },
+        { "description": "Exit codes based on violation severity for CI integration", "commit": "982c201" },
+        { "description": "MCP server with `openapi://` resource URIs for spec access", "commit": "c436afe" },
+        { "description": "MCP prompts for guided API review workflows", "commit": "c436afe" },
+        { "description": "MCP tools for linting and evaluation from Claude Desktop", "commit": "c436afe" },
+        { "description": "Claude Code hooks for pre-commit and post-save linting", "commit": "7d3d506" },
+        { "description": "Claude Code skills for `/lint` and `/evaluate` slash commands", "commit": "7d3d506" },
+        { "description": "SARIF 2.1.0 output format for IDE integration (VS Code, JetBrains)", "commit": "ec6b375" },
+        { "description": "GitHub Code Scanning compatible SARIF output", "commit": "ec6b375" },
+        { "description": "REST API server with `/api/lint` and `/api/profiles` endpoints", "commit": "dc0f2f2" },
+        { "description": "CORS support for development and cross-origin requests", "commit": "dc0f2f2" },
+        { "description": "Web UI with Lit components: spec editor, profile selector, results panel", "commit": "f51327c" },
+        { "description": "Vite-based frontend build with hot module replacement", "commit": "f51327c" },
+        { "description": "Example OpenAPI specs: PetStore and E-Commerce APIs", "commit": "cd7afe6" },
+        { "description": "Example custom style profiles demonstrating profile customization", "commit": "cd7afe6" }
       ],
       "documentation": [
-        { "description": "MkDocs documentation site with Material theme", "commit": "47b6dc8" },
-        { "description": "Getting started guide with installation and basic usage", "commit": "47b6dc8" },
-        { "description": "Profile customization guide with YAML examples", "commit": "47b6dc8" },
-        { "description": "MCP integration guide for Claude Desktop setup", "commit": "47b6dc8" },
+        { "description": "MkDocs documentation site with Material theme", "commit": "73d3ef3" },
+        { "description": "Getting started guide with installation and basic usage", "commit": "73d3ef3" },
+        { "description": "Profile customization guide with YAML examples", "commit": "73d3ef3" },
+        { "description": "MCP integration guide for Claude Desktop setup", "commit": "73d3ef3" },
         { "description": "Feature roadmap with prioritized enhancements" }
       ],
       "build": [
-        { "description": "GitHub Actions workflows for CI/CD: build, lint, test", "commit": "c74e181" },
-        { "description": "golangci-lint configuration with security and style checks", "commit": "c743abf" },
-        { "description": "Schema generator tool for JSON Schema from Go types", "commit": "ed7302b" }
+        { "description": "GitHub Actions workflows for CI/CD: build, lint, test", "commit": "5c19ac8" },
+        { "description": "golangci-lint configuration with security and style checks", "commit": "a2545a4" },
+        { "description": "Schema generator tool for JSON Schema from Go types", "commit": "148c114" }
       ],
       "tests": [
-        { "description": "Unit tests for analyze package (82% coverage)", "commit": "fb2d291" },
-        { "description": "Unit tests for judge package (76% coverage)", "commit": "5bdc90d" },
-        { "description": "Unit tests for lint package (79% coverage)", "commit": "4222198" },
-        { "description": "Unit tests for SARIF package (92% coverage)", "commit": "b935239" }
+        { "description": "Unit tests for analyze package (82% coverage)", "commit": "d7fd114" },
+        { "description": "Unit tests for judge package (76% coverage)", "commit": "5d6a8b3" },
+        { "description": "Unit tests for lint package (79% coverage)", "commit": "731017d" },
+        { "description": "Unit tests for SARIF package (92% coverage)", "commit": "ec6b375" }
       ]
     }
   ]
