@@ -10,7 +10,7 @@ require (
 	github.com/modelcontextprotocol/go-sdk v1.8.0
 	github.com/plexusone/assistantkit v0.15.0
 	github.com/plexusone/omniskill v0.12.0
-	github.com/plexusone/structured-evaluation v0.14.0
+	github.com/plexusone/structured-evaluation v0.15.0
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.12.1
 	golang.org/x/text v0.43.0
