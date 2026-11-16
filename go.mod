@@ -3,7 +3,7 @@ module github.com/plexusone/systemspec-apistyle
 go 1.27.3
 
 require (
-	github.com/daveshanley/vacuum v0.39.3
+	github.com/daveshanley/vacuum v0.40.1
 	github.com/fsnotify/fsnotify v1.10.1
 	github.com/grokify/mogo v0.75.0
 	github.com/invopop/jsonschema v0.14.0
@@ -37,6 +37,7 @@ require (
 	github.com/charmbracelet/x/windows v0.2.2 // indirect
 	github.com/clipperhouse/displaywidth v0.11.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
+	github.com/dlclark/regexp2 v1.12.0 // indirect
 	github.com/dlclark/regexp2/v2 v2.12.0 // indirect
 	github.com/dop251/goja v0.0.0-20261021140635-64adc8bb4d51 // indirect
 	github.com/dop251/goja_nodejs v0.0.0-20260918173711-b481721df8a2 // indirect
@@ -64,8 +65,8 @@ require (
 	github.com/pb33f/jsonpath v0.8.5 // indirect
 	github.com/pb33f/jsonschema/v6 v6.0.3 // indirect
 	github.com/pb33f/libasyncapi v0.0.7 // indirect
-	github.com/pb33f/libopenapi v0.42.3 // indirect
-	github.com/pb33f/libopenapi-validator v0.16.2 // indirect
+	github.com/pb33f/libopenapi v0.42.5 // indirect
+	github.com/pb33f/libopenapi-validator v0.16.3 // indirect
 	github.com/pb33f/ordered-map/v2 v2.3.2 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
