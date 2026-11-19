@@ -152,8 +152,8 @@ github.com/plexusone/assistantkit v0.15.0 h1:4IuYf+MUPXXyquLZwV6WeXeqCZfnTewFLX5
 github.com/plexusone/assistantkit v0.15.0/go.mod h1:gs8jqYvzKSJr1qf/8n/JB1XaTv6z1C/MRkXn9Hh6lIg=
 github.com/plexusone/omniskill v0.12.1 h1:rDTGCAaN7K32vjNRJIbh2rukAH3nH1Ry7ekdqDoVD7o=
 github.com/plexusone/omniskill v0.12.1/go.mod h1:keWENahr9Ard3hiH2BHjgAB/mgXTKn7YHvRR5ljIXw0=
-github.com/plexusone/structured-evaluation v0.14.0 h1:gACNOB//bGD78F8WQlUhCtfBNY4FcRPxcLsbEWGzBc0=
-github.com/plexusone/structured-evaluation v0.14.0/go.mod h1:C7/anlUnYBxXMGRggHD7f2eQ+6ejXvXEIsCadG/D1kg=
+github.com/plexusone/structured-evaluation v0.16.0 h1:voJX1VTb6aBe3CG1KUivW2GeMDThL3g+CIS3tnE0PNA=
+github.com/plexusone/structured-evaluation v0.16.0/go.mod h1:8QPMyL3n8P7N7kmYVCBH0tNIbqqh6AbMUGHSmQVGnPA=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec h1:W09IVJc94icq4NjY3clb7Lk8O1qJ8BdBEF8z0ibU0rE=
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec/go.mod h1:qqbHyh8v60DhA7CoWK5oRCqLrMHRGoxYCSS9EjAz6Eo=
@@ -173,8 +173,8 @@ github.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8/go.mod h1:3n1Cw
 github.com/spf13/cobra v1.10.2 h1:DMTTonx5m65Ic0GOoRY2c16WCbHxOOw6xxezuLaBpcU=
 github.com/spf13/cobra v1.10.2/go.mod h1:7C1pvHqHw5A4vrJfjNwvOdzYu0Gml16OCs2GRiTUUS4=
 github.com/spf13/pflag v1.0.9/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
-github.com/spf13/pflag v1.0.10 h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=
-github.com/spf13/pflag v1.0.10/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
+github.com/spf13/pflag v1.1.0 h1:6W6MbVUrnMb8PEhjkqwsVLY7ryuzRfFHF4mQd7L94ag=
+github.com/spf13/pflag v1.1.0/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
